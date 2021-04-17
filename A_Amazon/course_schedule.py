@@ -1,5 +1,5 @@
 class Solution:
-    def can_finish(self, num_courses, prerequisites):
+    def canFinish(self, num_courses, prerequisites):
         # list comprehension
         graph = [[] for _ in range(num_courses)]
         visited = [0 for _ in range(num_courses)]
@@ -19,15 +19,15 @@ class Solution:
     # True <==> No cycle
     def dfs(self, graph, visited, i):
         # if ith node is marked as being visited, then a cycle is found
-        if visited[i] == -1:
+        if visited[i] == 'visited':
             return False
 
         # if it is done visted, then do not visit again
-        if visited[i] == 1:
+        if visited[i] == 'done':
             return True
 
         # mark as being visited
-        visited[i] = -1
+        visited[i] = 'visited'
 
         # visit all the neighbors
         for j in graph[i]:
@@ -35,6 +35,6 @@ class Solution:
                 return False
 
         # after visit all the neighbors, mark it as done visited
-        visited[i] = 1
+        visited[i] = 'done'
 
         return True
