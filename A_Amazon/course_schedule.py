@@ -22,11 +22,11 @@ class Solution:
         if visited[i] == 'visited':
             return False
 
-        # if it is done visted, then do not visit again
+        # If 'done' flag is set, that means all visits had been completed
         if visited[i] == 'done':
             return True
 
-        # mark as being visited
+        # mark the current node as being visited
         visited[i] = 'visited'
 
         # visit all the neighbors
@@ -34,7 +34,11 @@ class Solution:
             if not self.dfs(graph, visited, j):
                 return False
 
-        # after visit all the neighbors, mark it as done visited
+        # after all visit, finally mark it as done
         visited[i] = 'done'
 
         return True
+
+
+
+
