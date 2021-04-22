@@ -14,7 +14,7 @@ class Solution:
         return count
 
     def dfs(self, grid, i, j):
-        # If out of bound. Note the 'not' keyword here.
+        # If out of bound or hit water/'0'. Note the 'not' keyword here.
         if not (0 <= i < len(grid)) or not (0 <= j < len(grid[0])) or grid[i][j] == '0':
             return  # this is the part where the function backtracks
 
