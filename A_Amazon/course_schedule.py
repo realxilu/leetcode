@@ -9,9 +9,9 @@ class Solution:
             x, y = pair
             graph[x].append(y)
 
-        # run dfs starting from each node
+        # for each node run dfs
         for x in range(num_courses):
-            if not self.dfs(graph, visited, x):
+            if self.dfs(graph, visited, x) == False:
                 return False
 
         return True
@@ -38,7 +38,3 @@ class Solution:
         visited[i] = 'done'
 
         return True
-
-
-
-
