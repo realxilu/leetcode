@@ -11,6 +11,7 @@ class Solution:
 
         # for each node run dfs
         for x in range(num_courses):
+            # if run into a visited node aka detected a cycle return false
             if self.dfs(graph, visited, x) == False:
                 return False
 
