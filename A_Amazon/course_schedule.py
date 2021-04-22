@@ -1,8 +1,8 @@
 class Solution:
     def canFinish(self, num_courses, prerequisites):
         # list comprehension
-        graph = [[] for _ in range(num_courses)]
-        visited = [0 for _ in range(num_courses)]
+        graph = [[] for x in range(num_courses)]
+        visited = [0 for x in range(num_courses)]
 
         # create graph - ajacency list
         for pair in prerequisites:
