@@ -1,5 +1,5 @@
 from heapq import *
-
+# [PRIORITY QUEUE]
 
 def connect_rope(arr):
     if not arr:
