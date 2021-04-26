@@ -35,7 +35,7 @@ class Solution:
             if self.dfs(graph, visited, x) == False:
                 return False
 
-        # after all visit, finally mark it as done
+        # after all visits, mark the node as done
         visited[i] = 'done'
 
         return True
