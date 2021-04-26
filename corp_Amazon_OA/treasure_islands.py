@@ -10,6 +10,7 @@
 class Solution:
     def __init__(self, grid):
         self.m, self.n = len(grid), len(grid[0])
+        # note this is a global/centralized min value, a min value every function stack can see
         self._min = float('inf')
 
     def treasure_island(self, grid):
@@ -27,20 +28,26 @@ class Solution:
 
         # if treasure is found
         if grid[i][j] == 'X':
+            # update global* min value
             self._min = min(self._min, step)
             return
 
         step += 1
 
-        # mark current cell as 'D'/dagerous
+        # mark current cell as 'D'/dagerous 
+        # why? marking a cell 'D' indicates it has been visisted, otherwise it will loop forever
         grid[i][j] = 'D'
 
+        # let the code find its own path recursively
         self.dfs(grid, i + 1, j, step)
         self.dfs(grid, i - 1, j, step)
         self.dfs(grid, i, j + 1, step)
         self.dfs(grid, i, j - 1, step)
 
         # reinstate the cell as 'O'
+        # [IMPORTANT] why do we need to recover the cell we marked 'D' early on?
+        # 1) if the code is here, the original cell must be 'O', thus recovering. Only 3 options, if it were D or X the code could have returned already
+        # 2) previously we used 'D' as 'visited', but after backtrack finished, this cell could be potentially be used for other dfs visits (that haven't happend yet, not returning it back to 'O' would have permanently altered the map)
         grid[i][j] = 'O'
 
 
