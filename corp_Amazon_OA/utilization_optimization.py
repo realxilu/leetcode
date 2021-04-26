@@ -13,7 +13,7 @@ def two_sum_closest(a, b, target):
             i += 1
 
     # reverse dict
-    dic = {x[1]: x[0] for x in b}
+    dic = {x[1]: x[0] for _ in b}
 
     for x, y in a:
         if target - min_ - y in dic:
