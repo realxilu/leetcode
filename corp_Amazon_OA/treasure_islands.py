@@ -21,16 +21,18 @@ class Solution:
         return self._min
 
     def dfs(self, grid, i, j, step):
-        # If out of bound OR stepped on 'D'/dangerous cell, then backtrack
+        # if out of bound OR stepped on 'D'/dangerous cell, then backtrack
         if not (0 <= i < self.m) or not (0 <= j < self.n) or grid[i][j] == 'D':
             return
 
+        # if treasure is found
         if grid[i][j] == 'X':
             self._min = min(self._min, step)
             return
 
         step += 1
 
+        # mark current cell as 'D'/dagerous
         grid[i][j] = 'D'
 
         self.dfs(grid, i + 1, j, step)
@@ -38,6 +40,7 @@ class Solution:
         self.dfs(grid, i, j + 1, step)
         self.dfs(grid, i, j - 1, step)
 
+        # reinstate the cell as 'O'
         grid[i][j] = 'O'
 
 
@@ -47,5 +50,6 @@ grid = [['O', 'O', 'O', 'O'],
         ['O', 'O', 'O', 'O'],
         ['X', 'O', 'O', 'O']]
 s = Solution(grid)
-ss = s.treasure_island(grid)
-print(ss)
+ans = s.treasure_island(grid)
+print(ans)
+
