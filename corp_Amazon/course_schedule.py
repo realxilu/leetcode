@@ -2,7 +2,8 @@ class Solution:
     def canFinish(self, num_courses, prerequisites):
         # [PY] list comprehension
         graph = [[] for _ in range(num_courses)]
-        visited = [0 for _ in range(num_courses)]
+        # create a table 
+        visited = ['new' for _ in range(num_courses)]
 
         # create an ajacency list graph
         for pair in prerequisites:
