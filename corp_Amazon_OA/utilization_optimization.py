@@ -21,18 +21,16 @@ def two_sum_closest(a, b, target):
 
     return -1
 
-
+## MAIN
 # testcase 1 => (3, 1)
 # a = [[1, 8], [2, 7], [3, 14]]
 # b = [[1, 5], [2, 10], [3, 14]]
 # target = 20
 
-
 # testcase 2 => (2, 4)
 a = [[1, 3], [2, 5], [3, 7], [4, 10]]
 b = [[1, 2], [2, 3], [3, 4], [4, 5]]
 target = 10
-
 
 s = two_sum_closest(a, b, target)
 print(s)
