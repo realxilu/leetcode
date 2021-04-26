@@ -1,0 +1,4 @@
+
+# == vs 'is'
+The == operator compares the value or equality of two objects.
+The 'is' operator checks whether two variables point to the same object in memory. 
