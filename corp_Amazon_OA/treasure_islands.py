@@ -14,7 +14,7 @@ class Solution:
         self._min = float('inf')
 
     def treasure_island(self, grid):
-        if grid == None:
+        if grid is None:
             return -1
 
         self.dfs(grid, 0, 0, 0)
@@ -22,14 +22,14 @@ class Solution:
         return self._min
 
     def dfs(self, grid, i, j, step):
-        # 1) if out of bound 
+        # 1) hit the boundaries
         # 2) stepped on 'D'/dangerous cell
         if not (0 <= i < self.m) or not (0 <= j < self.n) or grid[i][j] == 'D':
             return # backtrack
 
         # if treasure is found
         if grid[i][j] == 'X':
-            # update global* min value
+            # compare current min with global min and update global min
             self._min = min(self._min, step)
             return
 
