@@ -12,6 +12,7 @@ class Solution:
         # [IMPORTANT] [1:] means start from the second element(indexed as 1)
         for x in intervals[1:]:
             # previous(pre) end is great than or touching the current(x) start
+            # pre[1] = pre's end; x[0] = x's start
             if pre[1] >= x[0]:
                 pre[1] = max(pre[1], x[1])
             else:
