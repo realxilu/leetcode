@@ -1,8 +1,5 @@
 class Solution:
     def merge(self, intervals):
-        if not intervals:
-            return None
-
         # [KEY] sorted by the starting indices
         intervals = sorted(intervals, key=lambda x: x[0])
 
