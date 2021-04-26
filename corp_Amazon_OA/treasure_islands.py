@@ -22,9 +22,10 @@ class Solution:
         return self._min
 
     def dfs(self, grid, i, j, step):
-        # if out of bound OR stepped on 'D'/dangerous cell, then backtrack
+        # 1) if out of bound 
+        # 2) stepped on 'D'/dangerous cell
         if not (0 <= i < self.m) or not (0 <= j < self.n) or grid[i][j] == 'D':
-            return
+            return # backtrack
 
         # if treasure is found
         if grid[i][j] == 'X':
