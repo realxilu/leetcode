@@ -7,7 +7,7 @@ def two_sum_closest(nums, target):
     _min = float('inf')
 
     while i < j:
-        diff = abs(target - nums[i] - nums[j])
+        diff = abs(nums[i] + nums[j] - target)
         _min = min(_min, diff)
 
         # [TIP] 'i' can only move to the right; j the left
