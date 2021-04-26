@@ -2,9 +2,6 @@ from heapq import *
 # [PRIORITY QUEUE]
 
 def connect_rope(arr):
-    if not arr:
-        return 0
-
     sum_ = 0
     heapify(arr)
     while arr:
