@@ -3,11 +3,13 @@ class Solution:
         if not intervals:
             return None
 
-        # KEY sorted by the starting indices
+        # [KEY] sorted by the starting indices
         intervals = sorted(intervals, key=lambda x: x[0])
 
+        # [TIP] pre is a sentry/dummy
         res, pre = [], intervals[0]
 
+        # [IMPORTANT] [1:] means start from the second element(indexed as 1)
         for x in intervals[1:]:
             # previous(pre) end is great than or touching the current(x) start
             if pre[1] >= x[0]:
