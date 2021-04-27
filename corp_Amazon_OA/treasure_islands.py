@@ -1,10 +1,10 @@
-## PROBLEM STATEMENT
+## [PROBLEM STATEMENT]
 # You have a map that marks the location of a treasure island. Some of the map area has jagged rocks and dangerous reefs. Other areas are safe to sail in. There are other explorers trying to find the treasure. So you must figure out a shortest route to the treasure island.
 
 # Assume the map area is a two dimensional grid, represented by a matrix of characters. You must start from the top-left corner of the map and can move one block up, down, left or right at a time. The treasure island is marked as X in a block of the matrix. X will not be at the top-left corner. Any block with dangerous rocks or reefs will be marked as D. You must not enter dangerous blocks. You cannot leave the map area. Other areas O are safe to sail in . The top-left corner is always safe. Output the minimum number of steps to get to the treasure.
 
 # X: treasure island
-# O: ocean
+# O: ocean/water
 # D: dangerous rock/reef
 
 class Solution:
@@ -46,13 +46,13 @@ class Solution:
         self.dfs(grid, i, j - 1, step)
 
         # reinstate the cell as 'O'
-        # [IMPORTANT] why do we need to recover the cell we marked 'D' early on?
-        # 1) if the code is here, the original cell must be 'O', thus recovering. Only 3 options, if it were D or X the code could have returned already
+        # [IMPORTANT] why do we need to revert the cell we marked 'D' back to 'O'?
+        # 1) if the code is already here, the original cell must be 'O', thus recovering. Only 3 options, if it were D or X the code could have returned already
         # 2) previously we used 'D' as 'visited', but after backtrack finished, this cell could be potentially be used for other dfs visits (that haven't happend yet, not returning it back to 'O' would have permanently altered the map)
         grid[i][j] = 'O'
 
 
-# main
+# [MAIN]
 grid = [['O', 'O', 'O', 'O'],
         ['D', 'O', 'D', 'O'],
         ['O', 'O', 'O', 'O'],
