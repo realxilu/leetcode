@@ -1,5 +1,5 @@
-1) Identation can really fuck you up. When running to persistent and unexplainable issue, check indentation.
+1) Careless identations can really fuck you up. When running to persistent and unexplainable issues, always check indentation first.
 
-2) # == vs 'is'
+2) '==' vs 'is'
 '==' checks the content
 'is' checks if two variables are pointing at the same object
