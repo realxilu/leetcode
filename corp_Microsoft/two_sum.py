@@ -1,5 +1,5 @@
 class Solution:
-    def two_sum(self, nums, target):
+    def twoSum(self, nums, target):
         dic = {}
 
         for i, x in enumerate(nums):
