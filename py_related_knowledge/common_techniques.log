@@ -1,0 +1,5 @@
+# use of sentry node
+dummy = Node(-1)
+
+# scan the array from the second element
+for x in arr[1:]
