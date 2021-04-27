@@ -1,20 +1,20 @@
 class Solution:
     def __init__(self):
-        self.list_ = []
+        self._list = []
 
     def preorder(self, root):
-        self._preorder(root, self.list_)
+        self._preorder(root, self._list)
 
-        return self.list_
+        return self._list
 
-    def _preorder(self, root, list_):
-        if not root:
+    def _preorder(self, root, _list):
+        if root is None:
             return
 
-        list_.append(root.val)
+        _list.append(root.val)
 
         for x in root.children:
-            self._preorder(x, list_)
+            self._preorder(x, _list)
 
 
 class Node:
