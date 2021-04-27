@@ -1,8 +1,8 @@
 class Solution:
     def setZeroes(self, matrix):
         m, n = len(matrix), len(matrix[0])
-        # If the 1st col has 0 col0 will be set to 0
-        col0 = 1 
+        # if the 1st col has 0 col0 will be set to 0
+        col0 = 1
 
         for i in range(m):
             if matrix[i][0] == 0:
