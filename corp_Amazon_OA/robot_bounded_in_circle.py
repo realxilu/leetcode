@@ -1,3 +1,4 @@
+# [IMPORTANT] the instructions are to be repeated FOREVER
 class Solution:
     def isRobotBounded(self, instructions):
         x, y, dx, dy = 0, 0, 0, 1
