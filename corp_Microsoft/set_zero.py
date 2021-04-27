@@ -15,7 +15,7 @@ class Solution:
             for j in reversed(range(1, n)):
                 if matrix[i][0] == 0 or matrix[0][j] == 0:
                     matrix[i][j] = 0
-            
+
             # [!!] BE CAREFUL ABOUT INDENTATION [!!]
             if col0 == 0:
                 matrix[i][0] = 0
