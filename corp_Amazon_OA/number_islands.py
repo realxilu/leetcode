@@ -1,4 +1,4 @@
-# note '1' is island, '0' is visisted
+# '1' is land, '0' is water/visisted
 class Solution:
     def numIslands(self, grid):
         count = 0
@@ -14,14 +14,18 @@ class Solution:
         return count
 
     def dfs(self, grid, i, j):
-        # If out of bound or hit water/'0'. Note the 'not' keyword here.
+        # 1) out of bound (OR)
+        # 2) hit water
         if not (0 <= i < len(grid)) or not (0 <= j < len(grid[0])) or grid[i][j] == '0':
-            return  # this is the part where the function backtracks
+            return  # backtrack
 
-        # mark the current cell visisted
+        # erase current land (mark it as water)
         grid[i][j] = '0'
 
         self.dfs(grid, i + 1, j)
         self.dfs(grid, i - 1, j)
         self.dfs(grid, i, j + 1)
         self.dfs(grid, i, j - 1)
+
+
+# [KEY] run dfs from EACH node in the map
