@@ -24,3 +24,8 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
+
+# learning pionts:
+# Create a queue in python
+# deque([root])
+
