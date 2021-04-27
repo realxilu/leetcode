@@ -1,0 +1,11 @@
+# create a queue
+deque([root])
+
+# create a list
+l = []
+
+# create a hashmap/dictionary
+dic = {}
+
+# create a set
+s = set()
