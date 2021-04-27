@@ -13,3 +13,7 @@ class Solution:
             j -= 1
 
         return True
+
+# learning points:
+# - isalnum: is alphanumeric
+# - lower: lower just one 'active' char instead of whole string

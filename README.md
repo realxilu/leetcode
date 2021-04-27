@@ -22,3 +22,6 @@ Commonly used functions:
 - append
 - popleft
 - pop
+
+Standardized tags:
+[TWO-POINTER] [BACKTRACK] [SLIDING-WINDOW] ...
