@@ -12,3 +12,6 @@ class Solution:
             arr[i], arr[j] = arr[j], arr[i]
             i += 1
             j -= 1
+
+
+# TODO need to write it another way

@@ -18,7 +18,8 @@ class Solution:
 
         return True
 
-    # True -> no cycle; False -> cycle detected
+    # True -> no cycle
+    # False -> detected cycle
     def dfs(self, graph, visited, i):
         # if ith node is marked as being visited, then a cycle is found
         if visited[i] == 'visited':
