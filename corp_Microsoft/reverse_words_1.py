@@ -1,9 +1,13 @@
 class Solution:
-    def reverse_words(self, s):
-        if not s:
-            return s
+    def reverseWords(self, s):
+        l = s.split()
 
-        arr = s.split()
-        arr.reverse()
+        i, j = 0, len(l) - 1
 
-        return ' '.join(arr)
+        # [IN-PLACE]
+        while i < j:
+            l[i], l[j] = l[j], l[i]
+            i += 1
+            j -= 1
+
+        return ' '.join(l).strip()
