@@ -1,8 +1,8 @@
 # leetcode
 
 Common nomenclatures and conventions used in this repo:
-- i, j: for indexing. i is usually the index from left, j the index from right
-- left, right: also for indexing, less common than i, j but still in use
+- i, j: for indexing. 'i' is usually the index from left, 'j' the index from right
+- left, right: also for indexing, less common than 'i', 'j', but still in use
 - m, n: m = length for row, n = length for col
 - row, col: same as above
 - x, y: for content in the collection (as opposed to the indices above)
@@ -14,10 +14,10 @@ Common nomenclatures and conventions used in this repo:
 - pq: prioirty queue
 
 Shorthand notations:
-res = result set list
-ans = answer set
-dfs = depth first search / any backtracking algorithms
-cur = cur node or pointer
+- res = result set list
+- ans = answer set
+- dfs = depth first search / any backtracking algorithms
+- cur = cur node or pointer
 
 Python:
 use _ for list comprehension (packing contents into the underscore)
