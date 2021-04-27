@@ -1,14 +1,14 @@
 def has_cycle(head):
-  slow, fast = head, head
+    slow = fast = head
 
-  while True:
-    if fast is None or fast.next is None:
-      return False
+    while True:
+        if fast is None or fast.next is None:
+            return False
 
-    slow = slow.next
-    fast = fast.next.next
+        slow = slow.next
+        fast = fast.next.next
 
-    if slow is fast:
-      return True
+        if slow is fast:
+            return True
 
-  return False
+    return False
