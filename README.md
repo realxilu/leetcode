@@ -1,4 +1,4 @@
-# Let's fucking get it this time, OORAH!
+# LET'S FUCKING GET SOME! OORAH!
 
 Common nomenclatures and conventions used in this repo:
 - i, j: for indexing. 'i' is usually the index from left, 'j' the index from right
