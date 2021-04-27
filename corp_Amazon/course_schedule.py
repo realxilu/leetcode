@@ -1,6 +1,6 @@
 class Solution:
     def canFinish(self, num_courses, prerequisites):
-        # [PY] list comprehension
+        # [PYTHON] list comprehension
         graph = [[] for _ in range(num_courses)]
         # create a table 
         visited = ['new' for _ in range(num_courses)]
