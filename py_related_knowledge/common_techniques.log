@@ -1,4 +1,4 @@
-# use of sentry node
+# use of sentry node outside of the main
 dummy = Node(-1)
 
 # scan the array from the second element
