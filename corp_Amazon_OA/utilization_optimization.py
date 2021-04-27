@@ -1,11 +1,11 @@
 # [TWO-POINTER]
 def two_sum_closest(a, b, target):
-    i, j, min_ = 0, len(b) - 1, float('inf')
+    i, j, _min = 0, len(b) - 1, float('inf')
 
     # find min
     while i < len(a) and j >= 0:
         diff = abs(target - a[i][1] - b[j][1])
-        min_ = min(min_, diff)
+        _min = min(_min, diff)
 
         if a[i][1] + b[j][1] > target:
             j -= 1
@@ -16,8 +16,8 @@ def two_sum_closest(a, b, target):
     dic = {x[1]: x[0] for _ in b}
 
     for x, y in a:
-        if target - min_ - y in dic:
-            return x, dic[target - min_ - y]
+        if target - _min - y in dic:
+            return x, dic[target - _min - y]
 
     return -1
 
