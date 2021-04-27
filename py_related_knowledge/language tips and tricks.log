@@ -1,4 +1,5 @@
+1) Identation can really fuck you up. When running to persistent and unexplainable issue, check indentation.
 
-# == vs 'is'
-The == operator compares the value or equality of two objects.
-The 'is' operator checks whether two variables point to the same object in memory. 
+2) # == vs 'is'
+'==' checks the content
+'is' checks if two variables are pointing at the same object
