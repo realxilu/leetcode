@@ -3,3 +3,6 @@ dummy = Node(-1)
 
 # scan the array from the second element
 for x in arr[1:]
+
+# while True + if (exit condition) is way easier to handle form logical perspective
+# if the interviewer bitch about it use De Morgan to convert the snippet to while (allowed condition)
