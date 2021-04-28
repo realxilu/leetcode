@@ -22,7 +22,7 @@ class Solution:
             cur.next = ListNode(_sum % 10)
             cur = cur.next
 
-        # don't forget about the last digit
+        # when the last digit sum requires carry over
         if _sum >= 10:
             cur.next = ListNode(1)
 
