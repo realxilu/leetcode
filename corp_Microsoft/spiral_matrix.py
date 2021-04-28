@@ -1,5 +1,6 @@
-#[KEY] maintain boundary indices that maps the outer layer of the box
-# notice that row_i, row_j, col_i and col_j are indices/pointers not the length
+# [KEY] maintain corner indices that record the outmost layer of the 'box'
+# [tip] while true + break
+# note that row_i, row_j, col_i and col_j are indices not the length
 class Solution:
     def spiralOrder(self, matrix):
         row_i, row_j = 0, len(matrix) - 1
@@ -7,11 +8,10 @@ class Solution:
         res = []
 
         while True:
-            # note col_j + 1 'range'
+            # note col_j + 1
             for j in range(col_i, col_j + 1):
                 res.append(matrix[row_i][j])
             row_i += 1
-            # while true + if break is awesome!
             if row_i > row_j:
                 break
 
@@ -21,7 +21,7 @@ class Solution:
             if col_i > col_j:
                 break
 
-            # notice the 3rd argument is -1
+            # note the last arg in 'range' is -1
             for j in range(col_j, col_i - 1, -1):
                 res.append(matrix[row_j][j])
             row_j -= 1
@@ -35,3 +35,4 @@ class Solution:
                 break
 
         return res
+
