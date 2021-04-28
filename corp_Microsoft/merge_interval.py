@@ -6,7 +6,7 @@ class Solution:
         # [TIP] pre is a sentry/dummy
         res, pre = [], intervals[0]
 
-        # [IMPORTANT] [1:] means start from the second element(indexed as 1)
+        # [innovative] [1:] means start from the 2nd element(indexed as 1)
         for x in intervals[1:]:
             # previous(pre) end is great than or touching the current(x) start
             # pre[1] = pre's end; x[0] = x's start

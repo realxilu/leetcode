@@ -1,4 +1,4 @@
-# [KEY] maintain corner indices that record the outmost boundary of the 'box'
+# [KEY] [innovative] maintain corner indices that record the outmost boundary of the 'box'
 # [tip] while true + break
 # note that row_i, row_j, col_i and col_j are indices not the length
 class Solution:
