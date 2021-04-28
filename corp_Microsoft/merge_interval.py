@@ -1,3 +1,5 @@
+# 0: start
+# 1: end
 class Solution:
     def merge(self, intervals):
         # [IMPORTANT] sorted by the starting indices
