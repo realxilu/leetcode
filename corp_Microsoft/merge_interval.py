@@ -8,9 +8,9 @@ class Solution:
         # [innovative] usage of dummy
         res, pre = [], intervals[0]
 
-        # intervals[1:] -> start from the 2nd element
+        # note cur point starts at 2nd interval
         for cur in intervals[1:]:
-            # previous end is great than or touching the next interval's start
+            # pre's end is great than or touching the next interval's start
             if pre[1] >= cur[0]:
                 pre[1] = max(pre[1], cur[1])
             else:
