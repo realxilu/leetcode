@@ -7,13 +7,13 @@ class Solution:
         res, pre = [], intervals[0]
 
         # intervals[1:] -> start from the 2nd element
-        for x in intervals[1:]:
+        for cur in intervals[1:]:
             # previous end is great than or touching the next interval's start
-            if pre[1] >= x[0]:
-                pre[1] = max(pre[1], x[1])
+            if pre[1] >= cur[0]:
+                pre[1] = max(pre[1], cur[1])
             else:
                 res.append(pre)
-                pre = x
+                pre = cur
 
         # don't forget the last case
         res.append(pre)
