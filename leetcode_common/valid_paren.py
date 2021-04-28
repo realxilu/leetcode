@@ -13,7 +13,7 @@ class Solution:
                 return False
 
         return len(stack) == 0
-            
+   
 # TODO refactor
 # const isValid = (string) = > {
 #     let stack = []
