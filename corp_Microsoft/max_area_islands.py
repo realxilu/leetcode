@@ -1,5 +1,5 @@
 class Solution:
-    # most upvoted solution
+    # most upvoted solution TODO needs a solution with better readability
     def max_area_of_island(self, grid):
         def dfs(i, j):
             if 0 <= i < m and 0 <= j < n and grid[i][j]:
