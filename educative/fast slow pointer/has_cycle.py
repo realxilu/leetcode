@@ -1,5 +1,5 @@
 def has_cycle(head):
-    slow, fast = head, head
+    slow = fast = head
 
     while True:
         # draw a diagram for the exit condition
