@@ -1,6 +1,7 @@
 # [KEY] [innovative] maintain corner indices that record the outmost boundary of the 'box'
 # [tip] while true + break
 # note that row_i, row_j, col_i and col_j are indices not the length
+# I also found that clear concise and consistent naming has simplied this problem quite a bit
 class Solution:
     def spiralOrder(self, matrix):
         row_i, row_j = 0, len(matrix) - 1
@@ -11,7 +12,9 @@ class Solution:
             # note col_j + 1
             for j in range(col_i, col_j + 1):
                 res.append(matrix[row_i][j])
+            # when finishing traveral from left to right, this row has finished thus row_i++
             row_i += 1
+            # any corner indice violations would require immediate exit
             if row_i > row_j:
                 break
 
