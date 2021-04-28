@@ -13,25 +13,5 @@ class Solution:
                 return False
 
         return len(stack) == 0
-   
-# TODO refactor
-# const isValid = (string) = > {
-#     let stack = []
-#     // define parentheses pairs
-#     let dict = {
-#         '{': '}',
-#         '[': ']',
-#         '(': ')',
-#     }
 
-#     for (let c of string) {
-#         if (c == = '{' | | c == = '[' | | c == = '(')
-#           stack.push(c)
-#         else if (c !== dict[stack[stack.length - 1]])
-#           return false
-#         else
-#           stack.pop()
-#     }
-
-#     return stack.length === 0
-# }
+# there is no need for map using this strategy
