@@ -1,5 +1,6 @@
 def remove_duplicates(arr):
     # 'i' is the index of the next non-duplicate element
+    # note both pointers are starting at the 2nd position
     i, j = 1, 1
 
     while j < len(arr):
@@ -8,6 +9,7 @@ def remove_duplicates(arr):
             i += 1
         j += 1
 
+    # debug point
     print(list(arr[:i]))
 
     return i
