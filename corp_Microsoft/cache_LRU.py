@@ -5,6 +5,7 @@ class Node:
         self.prev = None
         self.next = None
 
+# hashmap + doubly linkedlist
 
 class LRUCache:
     def __init__(self, capacity):
