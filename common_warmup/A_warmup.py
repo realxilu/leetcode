@@ -1,11 +1,14 @@
-# quick reverse
-a = [1, 2, 3]
-print(a[::-1])
+# queue
+from collections import deque
+q = deque()
 
-# quick swap
-x, y = 1, 2
-x, y = y, x
-print(x, y) # 2 1
+try:
+    q.append(1)
+    print(q.popleft())
+    print(q.popleft())
+    print(q.popleft())
+except:
+    print('exception thrown')
 
 # stack
 stack = []
@@ -19,6 +22,18 @@ try:
     print(stack.pop())
     print(stack.pop())
 except:
-    print('pop empty')
+    print('exception thrown')
 
-# queue
+# fast arr reverse
+a = [1, 2, 3]
+print(a[::-1])
+
+# fast swap
+x, y = 1, 2
+x, y = y, x
+print(x, y) # 2 1
+
+
+
+
+
