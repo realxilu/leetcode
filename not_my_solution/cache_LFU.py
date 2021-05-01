@@ -1,6 +1,5 @@
 import collections
 
-# TODO [NOT_MY_SOLUTION]
 class Node:
     def __init__(self, key, val):
         self.key = key
@@ -12,13 +11,11 @@ class Node:
 class DLinkedList:
     """ An implementation of doubly linked list.
 	
-	Two APIs provided:
-    
-    append(node): append the node to the head of the linked list.
-    pop(node=None): remove the referenced node. 
-                    If None is given, remove the one from tail, which is the least recently used.
-                    
-    Both operation, apparently, are in O(1) complexity.
+        Two APIs provided:
+        * append(node): append the node to the head of the linked list.
+        * pop(node=None): remove the referenced node. If None is given, remove the one from tail, which is the least recently used.
+                        
+        Both operation, apparently, are in O(1) complexity.
     """
 
     def __init__(self):

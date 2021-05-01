@@ -2,7 +2,6 @@ from threading import Semaphore, Lock
 from collections import deque
 
 # collection.deque is already thread-safe. However, we want to use a '_lock' to indicate the working principal
-
 class BoundedBlockingQueue(object):
     def __init__(self, capacity):
         self.capacity = capacity
