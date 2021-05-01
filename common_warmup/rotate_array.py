@@ -14,4 +14,15 @@ class Solution:
             j -= 1
 
 
-# TODO need to write it another way
+# method 2: brute force - swap out the array one by one
+# one swap: [1, 2, 3, 4, 5] -> [5, 1, 2, 3, 4]
+    def rotate(self, nums, k):
+        # deal with redundant rotations
+        k %= len(nums)
+
+        # swap it for k times
+        for _ in range(k):
+            previous = nums[-1]
+            for i in range(len(nums)):
+                nums[i], previous = previous, nums[i]
+
