@@ -70,7 +70,3 @@ print(x, y) # 2 1
 # if-else one liner
 age = 15
 print('kid' if age < 18 else 'adult')
-
-
-
-
