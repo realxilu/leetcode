@@ -1,6 +1,6 @@
 # QUEUE
 from collections import deque
-q = deque() # thread-safe
+q = deque()  # thread-safe
 
 try:
     q.append(1)
@@ -56,10 +56,10 @@ print(a[::-1])
 # fast swap
 x, y = 1, 2
 x, y = y, x
-print(x, y) # 2 1
+print(x, y)  # 2 1
 
-# array concat 
-[1, 2] + [3, 4] # [1, 2, 3, 4]
+# array concat
+[1, 2] + [3, 4]  # [1, 2, 3, 4]
 
 # array multiplication
 [True] * 10
