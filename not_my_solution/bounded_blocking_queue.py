@@ -1,10 +1,10 @@
 import threading
 import collections
 
-# we do not need editing since deque is thread-safe
+# we do not need editing lock since deque is already thread-safe
 
 class BoundedBlockingQueue(object):
-    def __init__(self, capacity: int):
+    def __init__(self, capacity):
         self.capacity = capacity
 
         self.pushing = threading.Semaphore(capacity)
@@ -13,24 +13,25 @@ class BoundedBlockingQueue(object):
 
         self.queue = collections.deque()
 
-    def enqueue(self, element: int) -> None:
+    def enqueue(self, element):
       self.pushing.acquire()
-    #   self.editing.acquire()
+    # self.editing.acquire()
 
       self.queue.append(element)
 
-    #   self.editing.release()
+    # self.editing.release()
       self.pulling.release()
 
-    def dequeue(self) -> int:
+    def dequeue(self):
         self.pulling.acquire()
-        # self.editing.acquire()
+    #   self.editing.acquire()
 
         res = self.queue.popleft()
 
-        # self.editing.release()
+    #   self.editing.release()
         self.pushing.release()
+
         return res
 
-    def size(self) -> int:
-      return len(self.queue)
+    def size(self):
+        return len(self.queue)

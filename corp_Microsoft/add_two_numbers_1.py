@@ -1,7 +1,7 @@
 class Solution:
     def addTwoNumbers(self, l1, l2):
         cur1, cur2 = l1, l2
-        # [innovative][sentry] the use of sentry will make the while clean and easy to read
+        # [innovative][dummy][elegant] usage of a sentinel node
         cur = dummy = ListNode(-1)
         _sum = 0
 
@@ -18,6 +18,7 @@ class Solution:
                 _sum += cur2.val
                 cur2 = cur2.next
 
+            # modulous division
             # example 14 % 10 = 4
             cur.next = ListNode(_sum % 10)
             cur = cur.next
