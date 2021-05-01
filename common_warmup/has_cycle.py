@@ -1,14 +1,23 @@
-def has_cycle(head):
-    slow = fast = head
+# https: // leetcode.com/problems/linked-list-cycle/
 
-    while True:
-        if fast is None or fast.next is None:
-            return False
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-        slow = slow.next
-        fast = fast.next.next
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        slow = fast = head
 
-        if slow is fast:
-            return True
+        while True:
+            if not fast or not fast.next:
+                return False
 
-    return False
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow is fast:
+                return True
+
+        return False
