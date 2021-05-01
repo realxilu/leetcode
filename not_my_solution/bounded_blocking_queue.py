@@ -1,12 +1,13 @@
 import threading
 import collections
 
-# we do not need editing lock since deque is already thread-safe
+# we do NOT need the 'editing' lock, since 'deque' is already thread-safe
 
 class BoundedBlockingQueue(object):
     def __init__(self, capacity):
         self.capacity = capacity
 
+        # [KEY] review semaphore
         self.pushing = threading.Semaphore(capacity)
         self.pulling = threading.Semaphore(0)
         # self.editing = threading.Lock()
