@@ -70,3 +70,10 @@ print(x, y)  # 2 1
 # if-else one liner
 age = 15
 print('kid' if age < 18 else 'adult')
+
+nums = [1, 2, 3, 4]
+start, stop = 1, 2
+nums[start:stop]  # items start through stop-1
+nums[start:]      # items start through the rest of the array
+nums[:stop]       # items from the beginning through stop-1
+nums[:]           #  nums copy of the whole array

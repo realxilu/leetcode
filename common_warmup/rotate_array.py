@@ -17,12 +17,13 @@ class Solution:
 # method 2: brute force - swap out the array one by one
 # one swap: [1, 2, 3, 4, 5] -> [5, 1, 2, 3, 4]
     def rotate(self, nums, k):
-        # deal with redundant rotations
         k %= len(nums)
 
-        # swap it for k times
+        # swap it for k times to achieve k rotations
         for _ in range(k):
-            previous = nums[-1]
+            # record the last number
+            prev = nums[-1]
             for i in range(len(nums)):
-                nums[i], previous = previous, nums[i]
+                nums[i], prev = prev, nums[i]
 
+# explanation: first record the last element and then swap out 2nd elements to the last using prev
