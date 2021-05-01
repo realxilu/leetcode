@@ -58,7 +58,18 @@ x, y = 1, 2
 x, y = y, x
 print(x, y) # 2 1
 
+# array concat 
+[1, 2] + [3, 4] # [1, 2, 3, 4]
 
+# array multiplication
+[True] * 10
+
+# list comprehension
+['Onibaba' for _ in range(10)]
+
+# if-else one liner
+age = 15
+print('kid' if age < 18 else 'adult')
 
 
 
