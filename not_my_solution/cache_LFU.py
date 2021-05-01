@@ -1,6 +1,6 @@
 import collections
 
-# TODO [NOT_MINE_SOLUTION]
+# TODO [NOT_MY_SOLUTION]
 class Node:
     def __init__(self, key, val):
         self.key = key
