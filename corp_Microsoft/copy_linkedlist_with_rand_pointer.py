@@ -1,18 +1,19 @@
 class Solution:
-    def copy_random_list(self, head):
+    def copyRandomList(self, head):
         dic = {}
-        m = n = head
 
         # first traversal creates a mapping
-        while m:
-            dic[m] = Node(m.val, None, None)
-            m = m.next
+        cur = head
+        while cur:
+            dic[cur] = Node(cur.val, None, None)
+            cur = cur.next
 
         # second traversal sets up the proper relationship between nodes
-        while n:
-            dic.get(n).next = dic.get(n.next)
-            dic.get(n).random = dic.get(n.random)
-            n = n.next
+        cur = head
+        while cur:
+            dic.get(cur).next = dic.get(cur.next)
+            dic.get(cur).random = dic.get(cur.random)
+            cur = cur.next
 
         return dic.get(head)
 
