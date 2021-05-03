@@ -2,7 +2,7 @@ class Solution:
     def productExceptSelf(self, nums):
         if not nums:
             return None
-        
+
         n = len(nums)
         tmp = 1
         res = [1] * n
