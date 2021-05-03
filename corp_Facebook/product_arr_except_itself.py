@@ -7,15 +7,20 @@ class Solution:
         tmp = 1
         res = [1] * n
 
-        # [0, 1 ... n - 2]
+        # 0 -> n - 2
         for i in range(n - 1):
             tmp *= nums[i]
             res[i + 1] = tmp
 
         tmp = 1
-        # [n - 1, n - 2, ... 1]
+        # n - 1 -> 1
         for i in range(n - 1, 0, -1):
             tmp *= nums[i]
-            res[i - 1] = tmp * res[i - 1]
+            res[i - 1] = tmp * res[i - 1] # this time we cross multiply the previously generated res array
 
         return res
+
+# [KEY] is to visualize this problem
+# 1,        2,          3,          4
+#           1           1*2         1*2*3
+# 2*3*4     3*4         4           
