@@ -1,7 +1,7 @@
 # The default parameter is very elegant here
 class Solution:
     def goodNodes(self, node, _max=-float(inf)):
-        if not node:
+        if node is None:
             return 0
 
         res = 1 if node.val >= _max else 0

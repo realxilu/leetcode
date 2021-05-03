@@ -59,10 +59,15 @@ x, y = y, x
 print(x, y)  # 2 1
 
 # array concat
-[1, 2] + [3, 4]  # [1, 2, 3, 4]
+[1, 2] + [3, 4]
 
-# array multiplication
-[True] * 10
+# string concat
+a = 'Hello'
+b = 'World'
+print(a + ' ' + b)
+
+# ['Onibaba', 'Onibaba', ... 'Onibaba']
+['Onibaba'] * 10
 
 # list comprehension
 ['Onibaba' for _ in range(10)]
@@ -71,6 +76,7 @@ print(x, y)  # 2 1
 age = 15
 print('kid' if age < 18 else 'adult')
 
+# array manipulation
 nums = [1, 2, 3, 4]
 start, stop = 1, 3
 nums[start:stop]  # items start through stop - 1
