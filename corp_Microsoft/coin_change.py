@@ -1,12 +1,13 @@
 class Solution:
     # [BEST]
-    def coin_change(self, coins, amount):
+    def coinChange(self, coins, amount):
+        n = len(coins)
         dp = [0] + [float('inf')] * amount
 
-        # try each amount
+        # build table bottom up: $1, $2, $3 ... $x
         for x in range(1, amount + 1):
             # check each denomination
-            for i in range(len(coins)):
+            for i in range(n):
                 if coins[i] <= x:
                     # either use or not use the coin
                     dp[x] = min(dp[x], dp[x - coins[i]] + 1)
@@ -15,8 +16,8 @@ class Solution:
 
 
 class Solution:
-    # [ISSUE] [GREEDY]: this ONLY works for certain denomiation: 1, 5, 10, 50
-    def coin_change(self, coins, amount):
+    # [DO_NOT_USE][GREEDY]: this ONLY works for certain coin denomiation: 1, 5, 10, 50
+    def coinChange(self, coins, amount):
         coins.sort()
         count, i = 0, len(coins) - 1
 

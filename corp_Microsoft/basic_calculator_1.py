@@ -13,8 +13,8 @@ class Solution:
                 # [TRICK] build the number using digits
                 num = 10 * num + int(c)
             elif c == '+':
-                res += sign * num # this is for the previous* operation
-                # the reset is for the next operation
+                res += sign * num # this is for the previous operation
+                # the reset for the next op
                 num = 0
                 sign = 1
             elif c == '-':
@@ -39,7 +39,7 @@ class Solution:
 
         return res
 
- # [KEY] 1 + 2 - 3
+ # [KEY] 1 + (2 - 3)
  # whenever an operator is hit, it means a number must have been formed.
  # res += sign * num is for the prevoius operation
  # what is the previous operation when the first '+' was hit, it is res = 0 (init) + 1
