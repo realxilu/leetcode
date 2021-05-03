@@ -77,3 +77,5 @@ nums[start:stop]  # items start through stop - 1
 nums[start:]      # items start through the rest of the array
 nums[:stop]       # items from the beginning through stop - 1
 nums[:]           # nums copy of the whole array
+
+1 + (True) #2 
