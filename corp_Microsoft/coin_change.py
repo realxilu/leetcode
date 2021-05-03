@@ -1,3 +1,10 @@
+# You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+
+# Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, 
+
+# return -1.
+
+# You may assume that you have an infinite number of each kind of coin.
 class Solution:
     # [BEST]
     def coinChange(self, coins, amount):
@@ -14,6 +21,22 @@ class Solution:
 
         return -1 if dp[amount] > amount else dp[amount]
 
+# examples
+# Input: coins = [1, 2, 5], amount = 11
+# Output: 3
+# Explanation: 11 = 5 + 5 + 1
+
+# Input: coins = [2], amount = 3
+# Output: -1
+
+# Input: coins = [1], amount = 0
+# Output: 0
+
+# Input: coins = [1], amount = 1
+# Output: 1
+
+# Input: coins = [1], amount = 2
+# Output: 2
 
 class Solution:
     # [DO_NOT_USE][GREEDY]: this ONLY works for certain coin denomiation: 1, 5, 10, 50
