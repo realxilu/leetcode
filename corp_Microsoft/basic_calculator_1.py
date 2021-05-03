@@ -22,16 +22,17 @@ class Solution:
                 num = 0
                 sign = -1
             elif c == '(':
+                # save the current 'res' and 'sign' into stack
                 stack.append(res)
                 stack.append(sign)
                 sign = 1
                 res = 0
             elif c == ')':
-                # perform in-paren calculation
+                # in-paren calculation
                 res += sign * num
                 num = 0
-                res *= stack.pop()
-                res += stack.pop()
+                res *= stack.pop() # sign
+                res += stack.pop() # res
 
         # [ATTENTION] handle the last number cuz' there is no sign after the last number
         res += sign * num
