@@ -85,3 +85,13 @@ nums[:stop]       # items from the beginning through stop - 1
 nums[:]           # nums copy of the whole array
 
 1 + (True) #2 
+
+# dictionary dic['stuff'] vs dic.get('stuff')
+dic = {}
+dic['a'] = 1
+dic['b'] = 2
+
+print(dic['a'])
+print(dic['b'])
+print(dic.get('c'))
+print(dic['c'])
