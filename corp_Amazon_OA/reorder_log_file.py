@@ -1,32 +1,19 @@
-from functools import cmp_to_key
-
-
 class Solution:
-    def reorder_log_files(self, logs):
-        letter_list, digit_list = [], []
+    def reorderLogFiles(self, logs):
+        letters, digits = [], []
 
-        for x in logs:
-            if x[-1].isdigit():
-                digit_list.append(x)
+        for log in logs:
+            split_log = log.split()
+            if split_log[1].isdigit():
+                digits.append(log)
             else:
-                letter_list.append(x)
+                # instead of lambda use tuple for sort to resolve tie
+                letters.append((split_log[1:], log))
 
-        letter_list = sorted(letter_list, key=cmp_to_key(self.comp))
+        letters.sort()
 
-        return [*letter_list, *digit_list]
+        # list comprehension only takes the second part
+        return [log for _, log in letters] + digits
 
-    # KEY
-    def comp(self, a, b):
-        a_index, b_index = a.index(' '), b.index(' ')
-
-        a_rest, b_rest = a[a_index:], b[b_index:]
-        if a_rest > b_rest:
-            return 1
-        if a_rest < b_rest:
-            return -1
-
-        a_first, b_first = a[:a_index], b[:b_index]
-        if a_first > b_first:
-            return 1
-        else:
-            return -1
+# The use of tuple is similar to \corp_Microsoft\merge_k_sorted_list.py
+# (x, y): if x comes to tie then use y to further sort
