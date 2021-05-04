@@ -1,28 +1,55 @@
-2020/2021 Amazon OA New Questions
+# 2020/2021 Amazon OA New Questions
 
-Turnstile	2020/2021	Experienced	SHL/HackerRank	US/Canada
-Top K Frequently Mentioned Keywords	2020/2021	Experienced	SHL	US/Canada
-Substrings of Size K Distinct Chars	2020/2021	Experienced	SHL/HackerRank	US/Canada
-Number of Islands	2020/2021	Experienced	SHL/HackerRank	US/Canada
-Most Common Word with Exclusion List	2020/2021	Experienced	SHL/HackerRank	US/Canada
-Items in Containers	2020/2021	Experienced	SHL/HackerRank	US/Canada
-Music Pairs	2020/2021	Experienced	HackerRank	US/Canada
-Minimum Difficulty of a Job Schedule	2020/2021	Experienced	HackerRank	US/Canada
-Autoscaling Policy/Utilization Checks	2020/2021	Experienced	HackerRank	US/Canada/India
-Optimal Utilization	2020/2021	Experienced	HackerRank	US/Canada
-Min Cost to Connect All Nodes	2020/2021	Experienced	HackerRank	US/Canada
-Five Star Seller	2020/2021	Experienced	HackerRank	US/Canada
-Transaction Logs	2020/2021	Experienced	HackerRank	US/Canada
-Shopping Patterns	2020/2021	Experienced	SHL/HackerRank	US/Canada/India
-Optimizing Box Weight	2021	Experienced	HackerRank	US/Canada
-Storage Optimization	2021	Experienced	HackerRank	US/Canada
-Find All Combination of Numbers Sum to Target / Shopping Options	2021	Experienced	HackerRank	US/Canada
-Number of Swaps to Sort / Algorithm Swap	2021	Experienced		US/Canada
-Amazon Prime Air Route	2021	Experienced	HackerRank	US/Canada/India
-Split String Into Unique Primes	2021	Experienced	HackerRank	US/Canada
-Robot Bounded in Box	2021	Experienced	HackerRank	US/Canada
-Number Game	2021	Experienced	HackerRank	US/Canada
+* Turnstile	2020/2021	Experienced	SHL/HackerRank	US/Canada
 
+* Top K Frequently Mentioned Keywords	2020/2021	Experienced	SHL	US/Canada
 https://leetcode.com/problems/top-k-frequent-words/
+
+* Substrings of Size K Distinct Chars	2020/2021	Experienced	SHL/HackerRank	US/Canada
+
+
+* Number of Islands	2020/2021	Experienced	SHL/HackerRank	US/Canada
+corp_Amazon_OA\number_islands.py
+
+* Most Common Word with Exclusion List	2020/2021	Experienced	SHL/HackerRank	US/Canada
+* Items in Containers	2020/2021	Experienced	SHL/HackerRank	US/Canada
+
+* Music Pairs	2020/2021	Experienced	HackerRank	US/Canada
+https://leetcode.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/
+
+* Minimum Difficulty of a Job Schedule	2020/2021	Experienced	HackerRank	US/Canada
+https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/
+
+* Autoscaling Policy/Utilization Checks	2020/2021	Experienced	HackerRank	US/Canada/India
+* Optimal Utilization	2020/2021	Experienced	HackerRank	US/Canada
+
+* Min Cost to Connect All Nodes	2020/2021	Experienced	HackerRank	US/Canada
+https://leetcode.com/discuss/interview-question/356981
+
+
+* Five Star Seller	2020/2021	Experienced	HackerRank	US/Canada
+https://leetcode.com/problems/maximum-average-pass-ratio/
+
+* Transaction Logs	2020/2021	Experienced	HackerRank	US/Canada
+
+
+* Shopping Patterns	2020/2021	Experienced	SHL/HackerRank	US/Canada/India
+https://leetcode.com/problems/minimum-degree-of-a-connected-trio-in-a-graph/
+
+* Optimizing Box Weight	2021	Experienced	HackerRank	US/Canada
+* Storage Optimization	2021	Experienced	HackerRank	US/Canada
+* Find All Combination of Numbers Sum to Target / Shopping Options	2021	Experienced	HackerRank	US/Canada
+* Number of Swaps to Sort / Algorithm Swap	2021	Experienced		US/Canada
+* Amazon Prime Air Route	2021	Experienced	HackerRank	US/Canada/India
+* Split String Into Unique Primes	2021	Experienced	HackerRank	US/Canada
+
+
+* Robot Bounded in Box	2021	Experienced	HackerRank	US/Canada
+corp_Amazon_OA\robot_bounded_in_circle.py
+
+* Number Game	2021	Experienced	HackerRank	US/Canada
+
+* reorder log files
 https://leetcode.com/problems/reorder-data-in-log-files/
+
 https://leetcode.com/problems/minimum-degree-of-a-connected-trio-in-a-graph/
