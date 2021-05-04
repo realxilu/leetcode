@@ -32,4 +32,4 @@ class Solution:
         elif num < 100:
             return self.tens[num // 10] + ' ' + self._helper(num % 10)
         else:
-            return self.less_than_20[(num // 100)] + ' Hundred ' + self._helper(num % 100)
+            return self.less_than_20[num // 100] + ' Hundred ' + self._helper(num % 100)
