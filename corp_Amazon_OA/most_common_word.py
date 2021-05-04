@@ -1,6 +1,4 @@
 import re
-
-
 class Solution:
     def mostCommonWord(self, paragraph, banned):
         paragraph = re.sub('\W+', ' ', paragraph).strip()
