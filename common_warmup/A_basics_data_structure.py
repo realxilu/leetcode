@@ -1,3 +1,4 @@
+#------------------------------------------------------------------------
 # QUEUE
 from collections import deque
 q = deque()  # supports multithreading
@@ -26,7 +27,7 @@ except:
     print('exception thrown')
 
 #------------------------------------------------------------------------
-# HASHMAP/DICTIONARY
+# HASHMAP |  DICTIONARY
 dic = {}
 dic['a'] = 'alex'
 dic['b'] = 'bob'
@@ -51,7 +52,7 @@ for k, v in dic.items():
     print(k + ' -> ' + v)
 
 #------------------------------------------------------------------------
-# lambda expressions
+# LAMBDA EXPRESSION
 l1 = list(map(lambda x: int(x), l1))
 
 #------------------------------------------------------------------------
