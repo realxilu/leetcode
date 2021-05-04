@@ -18,3 +18,4 @@ class Solution:
                 my_word = word
 
         return my_word
+
