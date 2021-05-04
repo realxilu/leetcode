@@ -1,5 +1,5 @@
 # [IN-PLACE][TWO-POINTER]
-def reverse_arr(arr):
+def reverse_array(arr):
     i, j = 0, len(arr) - 1
 
     while i < j:
@@ -10,6 +10,6 @@ def reverse_arr(arr):
     return arr
 
 arr = [1, 2, 3, 4]
-print(reverse_arr(arr))
+print(reverse_array(arr))
 
 # TODO need to write it using another method
