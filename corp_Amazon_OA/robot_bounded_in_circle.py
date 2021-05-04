@@ -1,4 +1,4 @@
-# [IMPORTANT] the instructions are to be repeated FOREVER
+# [ATTENTION] the instructions are to be repeated FOREVER
 class Solution:
     def isRobotBounded(self, instructions):
         x, y, dx, dy = 0, 0, 0, 1
@@ -12,3 +12,5 @@ class Solution:
                 x, y = x + dx, y + dy
 
         return (x, y) == (0, 0) or (dx, dy) != (0, 1)
+
+# review the mathmatical properties

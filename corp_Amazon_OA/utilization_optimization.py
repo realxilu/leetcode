@@ -1,4 +1,4 @@
-# [TWO-POINTER]
+# [TWO-POINTER] 'a', 'b' are two arrays
 def two_sum_closest(a, b, target):
     i, j, _min = 0, len(b) - 1, float('inf')
 
@@ -13,7 +13,7 @@ def two_sum_closest(a, b, target):
             i += 1
 
     # reverse dict
-    dic = {x[1]: x[0] for _ in b}
+    dic = {x[1]: x[0] for x in b}
 
     for x, y in a:
         if target - _min - y in dic:
@@ -21,13 +21,13 @@ def two_sum_closest(a, b, target):
 
     return -1
 
-## MAIN
-# testcase 1 => (3, 1)
+## MAIN -----------------------------------------------------------
+# testcase 1: solution is (3, 1)
 # a = [[1, 8], [2, 7], [3, 14]]
 # b = [[1, 5], [2, 10], [3, 14]]
 # target = 20
 
-# testcase 2 => (2, 4)
+# testcase 2: solution is (2, 4)
 a = [[1, 3], [2, 5], [3, 7], [4, 10]]
 b = [[1, 2], [2, 3], [3, 4], [4, 5]]
 target = 10
