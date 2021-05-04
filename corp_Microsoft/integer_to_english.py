@@ -17,8 +17,7 @@ class Solution:
 
         while num:
             if num % 1000:
-                words = self._helper(num % 1000) + \
-                    self.thousands[i] + ' ' + words
+                words = self._helper(num % 1000) + self.thousands[i] + ' ' + words
             num = num // 1000
             i += 1
 
