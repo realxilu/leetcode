@@ -12,7 +12,7 @@ def two_sum_closest(a, b, target):
         else:
             i += 1
 
-    # reverse dict
+    # reverse dict: value -> key
     dic = {x[1]: x[0] for x in b}
 
     for x, y in a:
