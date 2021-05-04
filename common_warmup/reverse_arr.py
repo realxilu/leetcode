@@ -1,4 +1,4 @@
-# [IN-PLACE][TWO POINTER]
+# [IN-PLACE][TWO-POINTER]
 def reverse_arr(arr):
     i, j = 0, len(arr) - 1
 

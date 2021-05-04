@@ -1,3 +1,4 @@
+# [WARM-UP]
 def remove_duplicates(arr):
     # 'i' is the index of the next non-duplicate element
     # note both pointers are starting at the 2nd position
