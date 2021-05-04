@@ -23,14 +23,16 @@ def two_sum_closest(a, b, target):
 
 ## MAIN -----------------------------------------------------------
 # testcase 1: solution is (3, 1)
+# explanation [3, 14] from 'a' and [1, 5] from 'b', 14 + 5 = 19 closest to 20
+# target = 20
 # a = [[1, 8], [2, 7], [3, 14]]
 # b = [[1, 5], [2, 10], [3, 14]]
-# target = 20
 
-# testcase 2: solution is (2, 4)
+# testcase 2: solution is (2, 4) 
+# explanation [2, 5] from 'a' and [4, 5] from 'b', 5 + 5 = 10  
+target = 10
 a = [[1, 3], [2, 5], [3, 7], [4, 10]]
 b = [[1, 2], [2, 3], [3, 4], [4, 5]]
-target = 10
 
 s = two_sum_closest(a, b, target)
 print(s)
