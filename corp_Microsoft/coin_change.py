@@ -20,6 +20,7 @@ class Solution:
             for i in range(len(coins)):
                 if coins[i] <= x:
                     # either use or not use the coin
+                    # [0, inf, inf, inf, inf, ... inf ]
                     dp[x] = min(dp[x], dp[x - coins[i]] + 1)
 
         return -1 if dp[amount] > amount else dp[amount]
