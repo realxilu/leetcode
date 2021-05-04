@@ -9,7 +9,7 @@ def reverse_arr(arr):
 
     return arr
 
-arr = [1,2,3,4]
+arr = [1, 2, 3, 4]
 print(reverse_arr(arr))
 
 # TODO need to write it using another method
