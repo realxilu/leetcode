@@ -48,6 +48,9 @@ for v in dic.values():
 for k, v in dic.items():
     print(k + ' -> ' + v)
 
+# lambda expressions
+l1 = list(map(lambda x: int(x), l1))
+
 # --------------------
 # fast arr reverse
 a = [1, 2, 3]
