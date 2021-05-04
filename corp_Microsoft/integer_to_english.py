@@ -7,6 +7,7 @@ class Solution:
                      'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
 
         self.thousands = ['', 'Thousand', 'Million', 'Billion']
+    # ------------------------------------------------------------------------------------------------------------------------------------
 
     def numberToWords(self, num):
         if num == 0:
