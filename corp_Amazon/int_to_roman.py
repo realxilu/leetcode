@@ -4,13 +4,12 @@ class Solution:
         roman_numerals = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
 
         res = ''
-        for val, roman in zip(numeric_values, roman_numerals):
-            # [KEY] string multiplication
-            # 0 * 'a' = ''
-            # 3 * 'a' = 'aaa'
-            res += (num // val) * roman
-            num %= val
+        for digit, roman in zip(numeric_values, roman_numerals):
+            res += (num // digit) * roman
+            num %= digit
 
         return res
 
-# need to spend some time to internalize special strings
+# [KEY] string multiplication
+# 0 * 'a' = ''
+# 3 * 'a' = 'aaa'
