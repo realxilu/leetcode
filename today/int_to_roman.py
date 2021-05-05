@@ -12,3 +12,5 @@ class Solution:
             num %= val
 
         return res
+
+# need to spend some time to internalize special strings
