@@ -2,12 +2,11 @@ class Solution:
     def canFinish(self, num_courses, prerequisites):
         # [PYTHON] list comprehension
         graph = [[] for _ in range(num_courses)]
-        # create a table 
+        # create a table
         visited = ['new' for _ in range(num_courses)]
 
         # create an ajacency list graph
-        for pair in prerequisites:
-            x, y = pair
+        for x, y in prerequisites:
             graph[x].append(y)
 
         # for each node run dfs
@@ -41,3 +40,6 @@ class Solution:
         visited[i] = 'done'
 
         return True
+
+
+# For example, the pair[0, 1], indicates that to take course 0 you have to first take course 1.
