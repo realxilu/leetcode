@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\xilu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
     "python.linting.enabled": true
 }
