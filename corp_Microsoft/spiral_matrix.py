@@ -25,8 +25,7 @@ class Solution:
             if col_i > col_j:
                 break
 
-            # note going backward
-            # note interval is -1 here
+            # note 1) going backward 2) range(start, stop[, step]) 3) interval is -1 here
             for j in range(col_j, col_i - 1, -1):
                 res.append(matrix[row_j][j])
             row_j -= 1
