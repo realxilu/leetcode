@@ -14,7 +14,7 @@ class Solution:
                 res.append(matrix[row_i][j])
             # when finishing traveral from left to right, this row has finished thus row_i++
             row_i += 1
-            # any corner indice violations would require immediate exit
+            # any corner index violates the boundary constraint, exit immediately
             if row_i > row_j:
                 break
 
