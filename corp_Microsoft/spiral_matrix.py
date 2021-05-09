@@ -9,10 +9,11 @@ class Solution:
         res = []
 
         while True:
-            # note col_j + 1
+            # note row_i, row_j are indices
+            # the 2nd param for the 'range' function is length, thus do '+ 1' to translate to length
             for j in range(col_i, col_j + 1):
                 res.append(matrix[row_i][j])
-            # when finishing traveral from left to right, this row has finished thus row_i++
+            # when finishing traveral from left to right, shrink the top row
             row_i += 1
             # any corner index violates the boundary constraint, exit immediately
             if row_i > row_j:
@@ -24,7 +25,8 @@ class Solution:
             if col_i > col_j:
                 break
 
-            # note the last arg in 'range' is -1
+            # note going backward
+            # note interval is -1 here
             for j in range(col_j, col_i - 1, -1):
                 res.append(matrix[row_j][j])
             row_j -= 1
@@ -38,4 +40,3 @@ class Solution:
                 break
 
         return res
-
