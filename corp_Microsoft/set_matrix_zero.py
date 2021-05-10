@@ -1,3 +1,4 @@
+# This is my own solution. More intuitive than the most upvoted solution found on leetcode.com.
 class Solution:
     def setZeroes(self, matrix):
         m, n = len(matrix), len(matrix[0])
