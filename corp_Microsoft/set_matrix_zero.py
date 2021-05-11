@@ -1,6 +1,3 @@
-# This is my own solution. More intuitive than the most upvoted solution found on leetcode.com.
-# [KEY] Use the first row and col to mark if the row or col should be all zero based on matrix[i][j]
-# The first row and col are speical though, they needed special flags to mark their status.
 class Solution:
     def setZeroes(self, matrix):
         m, n = len(matrix), len(matrix[0])
@@ -32,3 +29,9 @@ class Solution:
         if col0:
             for i in range(m):
                 matrix[i][0] = 0
+
+# This is my own solution. More intuitive than the most upvoted solution found on leetcode.com.
+# [KEY] Use the first row and col to mark if the row or col should be all zero based on matrix[i][j]
+# The first row and col are speical though, they needed special flags to mark their status.
+
+

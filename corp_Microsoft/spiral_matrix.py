@@ -1,7 +1,3 @@
-# [KEY] [innovative] maintain corner indices that record the outmost boundary of the 'box'
-# [tip] while true + break
-# note that row_i, row_j, col_i and col_j are indices not the length
-# I also found that clear concise and consistent naming has simplied this problem quite a bit
 class Solution:
     def spiralOrder(self, matrix):
         row_i, row_j = 0, len(matrix) - 1
@@ -39,3 +35,8 @@ class Solution:
                 break
 
         return res
+
+# [KEY] [innovative] maintain corner indices that record the outmost boundary of the 'box'
+# [tip] while true + break
+# note that row_i, row_j, col_i and col_j are indices not the length
+# I also found that clear concise and consistent naming has simplied this problem quite a bit
