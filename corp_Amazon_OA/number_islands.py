@@ -14,12 +14,12 @@ class Solution:
         return count
 
     def dfs(self, grid, i, j):
-        # 1) out of bound (OR)
+        # 1) out of bound
         # 2) hit water
         if not (0 <= i < len(grid)) or not (0 <= j < len(grid[0])) or grid[i][j] == '0':
             return  # backtrack
 
-        # erase current land (mark it as water)
+        # erase current land grid by marking it water
         grid[i][j] = '0'
 
         self.dfs(grid, i + 1, j)
@@ -28,4 +28,4 @@ class Solution:
         self.dfs(grid, i, j - 1)
 
 
-# [KEY] run dfs from EACH node in the map
+# [KEY] run dfs from each node in the map

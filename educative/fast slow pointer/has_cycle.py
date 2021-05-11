@@ -2,7 +2,7 @@ def has_cycle(head):
     slow = fast = head
 
     while True:
-        # draw a diagram for the exit condition
+        # stop condition
         if fast is None or fast.next is None:
             return False
 
@@ -13,3 +13,5 @@ def has_cycle(head):
             return True
 
     return False
+
+# [KEY] draw a diagram for the exit condition
