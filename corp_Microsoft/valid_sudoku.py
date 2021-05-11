@@ -26,3 +26,5 @@ class Solution:
             return len(res) == len(set(res))
 
         return is_valid_row(board) and is_valid_column(board) and is_valid_square(board)
+
+# [KEY] matrix transposition, indices manipulation
