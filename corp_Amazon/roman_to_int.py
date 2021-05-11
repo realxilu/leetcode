@@ -10,7 +10,7 @@ class Solution:
             'M': 1000
         }
 
-        # the ordering of following doesn't matter
+        # the ordering of following ops does NOT matter
         string = string.replace('IV', 'IIII')  # 4   = 5 - 1      = 1 + 1 + 1 + 1 
         string = string.replace('IX', 'VIIII') # 9   = 10 - 1     = 5 + 1 + 1 + 1 + 1
         string = string.replace('XL', 'XXXX')  # 40  = 50 - 10    = 10 + 10 + 10 + 10
@@ -23,3 +23,5 @@ class Solution:
             res += dic[c]
 
         return res
+
+# [KEY] string replacement for subtractive substrings
