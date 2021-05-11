@@ -19,3 +19,4 @@ class Solution:
 
         return my_word
 
+# strip() will remove the leading and trailing spaces
