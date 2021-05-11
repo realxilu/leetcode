@@ -9,7 +9,7 @@ def two_sum_closest(nums, target):
         diff = abs(nums[i] + nums[j] - target)
         _min = min(_min, diff)
 
-        # [TIP] 'i' can only move to the right; j the left
+        # [TIP] 'i' can only move to the right and 'j' only the left due to the ordering
         if nums[i] + nums[j] < target:
             i += 1
         else:
