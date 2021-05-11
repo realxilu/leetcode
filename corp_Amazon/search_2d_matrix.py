@@ -17,4 +17,6 @@ class Solution:
         return False
 
 # [BINARY SEARCH]
-# [KEY] index conversion
+# [KEY] index conversion. Work on linear array, convert 'mid' to the appropriate positions in the matrix
+# row = mid // n
+# col = mid % n
