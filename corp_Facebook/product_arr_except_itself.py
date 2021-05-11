@@ -1,3 +1,4 @@
+# [BT]
 class Solution:
     def productExceptSelf(self, nums):
         if not nums:
