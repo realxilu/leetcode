@@ -13,4 +13,4 @@ class Solution:
 
         return (x, y) == (0, 0) or (dx, dy) != (0, 1)
 
-# review the mathmatical properties
+# Need to be able to explain the mathmatical properties in the return statement
