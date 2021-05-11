@@ -1,30 +1,28 @@
-# let boxRow = 3 * parseInt(i / 3) + parseInt(j / 3)
-# let boxCol = 3 * (i % 3) + j % 3
-
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
-        n = len(board)
+    def isValidSudoku(self, board):
+        def is_valid_row(board):
+            for row in board:
+                if not is_valid(row):
+                    return False
+            return True
 
-        for i in range(n):
-            row_set, col_set, box_set = set(), set(), set()
-            for j in range(n):
-                if board[i][j] != '.':
-                    if board[i][j] in row_set:
+        def is_valid_column(board):
+            for col in zip(*board):
+                if not is_valid(col):
+                    return False
+            return True
+
+        def is_valid_square(board):
+            for i in (0, 3, 6):
+                for j in (0, 3, 6):
+                    square = [board[x][y] for x in range(i, i+3)
+                              for y in range(j, j+3)]
+                    if not is_valid(square):
                         return False
-                    row_set.add(board[i][j])
+            return True
 
-                if board[j][i] != '.':
-                    if board[j][i] in col_set:
-                        return False
-                    col_set.add(board[j][i])
+        def is_valid(value):
+            res = [i for i in value if i != '.']
+            return len(res) == len(set(res))
 
-                # [KEY] index transformation is paramount to this problem
-                box_i = 3 * (i // 3) + (j // 3)
-                box_j = 3 * (i % 3) + (j % 3)
-
-                if board[box_i][box_j] != '.':
-                    if board[box_i][box_j] in box_set:
-                        return False
-                    box_set.add(board[box_i][box_j])
-
-        return True
+        return is_valid_row(board) and is_valid_column(board) and is_valid_square(board)
