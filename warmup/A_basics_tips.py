@@ -22,8 +22,16 @@ print(a + ' ' + b)
 # ARRAY MULTIPLICATION
 ['Onibaba'] * 10
 
-# LIST COMPREHENSION
+# LIST COMPREHENSION 1d
 ['Onibaba' for _ in range(10)]
+
+# LIST COMPREHENSION 2d
+mat = [[0 for _ in range(3)] for _ in range(3)]
+print(mat)
+mat[0][0] = 167
+print(mat)
+mat[1][2] = -123
+print(mat)
 
 # IF-ELSE
 age = 15
@@ -48,3 +56,22 @@ for row in matrix:
 transposed_matrix = zip(*matrix)
 for row in transposed_matrix:
     print(row)
+
+# BUILD HASH COUNTER
+dic = {}
+s = 'abbcccdddd'
+for c in s:
+    if c not in dic:
+        dic[c] = 1
+    else:
+        dic[c] += 1
+
+print(dic)
+# equivalent to following, the following one liner is cleaner
+dic = {}
+s = 'abbcccdddd'
+
+for c in s:
+    dic[c] = dic.get(c, 0) + 1 # if c is not found, then initialize it as 1
+
+print(dic)
