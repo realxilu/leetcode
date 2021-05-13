@@ -37,3 +37,7 @@ class Node:
     def __init__(self, val, neighbors):
         self.val = val
         self.neighbors = neighbors # list
+
+# [KEY] bfs traversal + hashmap 
+# 1st pass created mapped nodes
+# 2nd pass establish relationships between the old and new
