@@ -75,3 +75,7 @@ for c in s:
     dic[c] = dic.get(c, 0) + 1 # if c is not found, then initialize it as 1
 
 print(dic)
+
+# best way
+import collections
+dic = collections.Counter(s)
