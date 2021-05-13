@@ -19,8 +19,8 @@ class Solution:
         if not (0 <= i < len(board)) or not (0 <= j < len(board[0])) or word[0] != board[i][j]:
             return False
 
-        tmp = board[i][j]  # first character is found, check the remaining part
-        board[i][j] = "#"  # avoid visit agian
+        tmp = board[i][j] # first character is found, check the remaining part
+        board[i][j] = "#" # avoid visit agian
         # check whether can find "word" along one direction
         res = self.dfs(board, i + 1, j, word[1:]) or self.dfs(board, i - 1, j, word[1:]) \
             or self.dfs(board, i, j + 1, word[1:]) or self.dfs(board, i, j - 1, word[1:])
