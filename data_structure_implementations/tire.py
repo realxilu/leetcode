@@ -1,3 +1,4 @@
+# https: // leetcode.com/problems/implement-trie-prefix-tree/
 class TrieNode:
     def __init__(self):
         self.children = collections.defaultdict(TrieNode)
