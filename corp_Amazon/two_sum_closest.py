@@ -18,4 +18,4 @@ def two_sum_closest(nums, target):
     return _min
 
 # [TWO-POINTER]
-# [KEY] the array needs to be ordered for two pointer to work
+# [KEY] the array needs to be sorted for two pointer to work
