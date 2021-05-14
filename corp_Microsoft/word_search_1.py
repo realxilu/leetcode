@@ -17,7 +17,7 @@ class Solution:
             return True
 
         # 1) out of bound
-        # 2) word not found
+        # 2) if current character of the word is not found, then the word can't be found
         if not (0 <= i < len(board)) or not (0 <= j < len(board[0])) or word[0] != board[i][j]:
             return False
 
