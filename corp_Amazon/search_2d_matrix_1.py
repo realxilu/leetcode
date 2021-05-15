@@ -7,10 +7,10 @@ class Solution:
         while start <= end:
             mid = (start + end) // 2
 
-            if matrix[mid // n][mid % n] == target:
+            if target == matrix[mid // n][mid % n]:
                 return True
 
-            if matrix[mid // n][mid % n] < target:
+            if target > matrix[mid // n][mid % n]:
                 start = mid + 1
             else:
                 end = mid - 1
