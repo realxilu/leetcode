@@ -11,3 +11,6 @@ class Solution:
                 i += 1
 
         return False
+
+# [KEY] observe the property of the matrix
+# start from top right and move row index down and col index to the left
