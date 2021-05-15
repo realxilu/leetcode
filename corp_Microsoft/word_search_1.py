@@ -1,4 +1,3 @@
-# TODO 
 class Solution:
     def exist(self, board, word):
         if not board:
@@ -18,17 +17,19 @@ class Solution:
             return True
 
         # 1) out of bound
-        # 2) word not found
+        # 2) if current character of the word is not found, then the word can't be found
         if not (0 <= i < len(board)) or not (0 <= j < len(board[0])) or word[0] != board[i][j]:
             return False
 
         # first character is found, check the remaining part
         tmp = board[i][j]
-         # avoid visit agian
+        # avoid visit agian
         board[i][j] = "#"
         # check whether can find "word" along one direction
-        res = self.dfs(board, i + 1, j, word[1:]) or self.dfs(board, i - 1, j, word[1:]) \
-            or self.dfs(board, i, j + 1, word[1:]) or self.dfs(board, i, j - 1, word[1:])
+        res = self.dfs(board, i + 1, j, word[1:]) or \
+            self.dfs(board, i - 1, j, word[1:]) or \
+            self.dfs(board, i, j + 1, word[1:]) or \
+            self.dfs(board, i, j - 1, word[1:])
         board[i][j] = tmp
 
         return res

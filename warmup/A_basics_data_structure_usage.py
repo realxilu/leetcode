@@ -51,6 +51,9 @@ for v in dic.values():
 for k, v in dic.items():
     print(k + ' -> ' + v)
 
+# defaultdict with type 'list', it can be any class such as TreeNode
+collections.defaultdict(list)
+
 #------------------------------------------------------------------------
 # LAMBDA EXPRESSION
 l1 = list(map(lambda x: int(x), l1))
