@@ -1,21 +1,16 @@
+# [PRIROITY_QUEUE]
+import heapq
 class Solution:
-    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        starts, ends = [], []
+    def minMeetingRooms(self, intervals):
+        intervals.sort(key=lambda x: x[0])
 
-        for x in intervals:
-            starts.append(x[0])
-            ends.append(x[1])
-
-        starts.sort()
-        ends.sort()
-
-        rooms, j = 0, 0
-        for i in range(len(intervals)):
-            if starts[i] < ends[j]:
-                rooms += 1
+        heap = []  # stores the end time of intervals
+        for interval in intervals:
+            if heap and interval[0] >= heap[0]:
+                # means two intervals can use the same room
+                heapq.heapreplace(heap, interval[1])
             else:
-                j += 1
+                # a new room is allocated
+                heapq.heappush(heap, interval[1])
 
-        return rooms
-
-
+        return len(heap)
