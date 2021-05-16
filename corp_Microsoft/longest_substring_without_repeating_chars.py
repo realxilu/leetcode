@@ -1,5 +1,6 @@
-# [TWO-POINTER] i = start pointer, j end pointer
+# [TWO-POINTER]
 class Solution:
+    # i = start pointer, j = end pointer
     def lengthOfLongestSubstring(self, s):
         dic = {}
         i = j = 0
@@ -9,8 +10,8 @@ class Solution:
             # [TRICK] build the char dic counter
             dic[s[j]] = dic.get(s[j], 0) + 1
 
-            # as long as the current char has appeared more than once (we have a duplicate now)
-            while dic[s[j]] > 1:
+            # as long as the current char has appeared more than once (repeating chars)
+            while dic.get(s[j]) > 1:
                 # deduct the count since we will advance the start pointer 'i' in our next step
                 dic[s[i]] -= 1
                 # move the start pointer 'i' forward
