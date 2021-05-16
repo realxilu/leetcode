@@ -1,7 +1,9 @@
-# [PRIROITY_QUEUE]
+# [HEAPQ]
 import heapq
 
 class Solution:
+    # cur_interval[0] = start of the interval
+    # cur_interval[1] = end of the interval
     def minMeetingRooms(self, intervals):
         # sort intervals based on the starting time
         intervals.sort(key = lambda x: x[0])
@@ -23,5 +25,6 @@ class Solution:
 
         return len(rooms)
 
-# cur_interval[0] = start of the interval
-# cur_interval[1] = end of the interval
+# [KEY] learn to use priority queue
+
+
