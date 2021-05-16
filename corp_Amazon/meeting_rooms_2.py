@@ -26,5 +26,5 @@ class Solution:
         return len(rooms)
 
 # [KEY] learn to use priority queue
-
+# heaprepalce = heap pop + heap push but more elegant
 
