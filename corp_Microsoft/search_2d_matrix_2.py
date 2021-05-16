@@ -12,6 +12,6 @@ class Solution:
 
         return False
 
-# [KEY] observe the property of the matrix
+# [KEY] observe the given property of the matrix
 # i = row index; j = col index
 # start from top right and move row index down and col index to the left
