@@ -4,7 +4,7 @@ import heapq
 class Solution:
     def minMeetingRooms(self, intervals):
         # sort intervals based on the starting time
-        intervals.sort(key=lambda x: x[0])
+        intervals.sort(key = lambda x: x[0])
 
         # NOTE 'rooms' only stores the *end* time of rooms
         rooms = []
