@@ -76,6 +76,10 @@ for c in s:
 
 print(dic)
 
-# best way
+# best way to build a freq dictionary for words
 import collections
 dic = collections.Counter(s)
+
+# DELTE operations
+a = [1,2,3,4]
+del a[1]
