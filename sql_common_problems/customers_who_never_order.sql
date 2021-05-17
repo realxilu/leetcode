@@ -20,14 +20,16 @@
 -- +----+------------+
 
 -- Using the above tables as example, return the following:
--- +-----------+
--- | Customers |
--- +-----------+
--- | Henry     |
--- | Max       |
--- +-----------+
+-- +--------------------------------+
+-- | Customers not ordering stuff   |
+-- +--------------------------------+
+-- | Henry                          |
+-- | Max                            |
+-- +--------------------------------+
 
-SELECT Name 'Customers'
+SELECT Name 'Customers not ordering stuff'
 FROM Customers LEFT JOIN Orders
 ON Customers.Id = Orders.CustomerId
 WHERE Orders.CustomerId IS NULL;
+
+-- NOTE Customers is on the left of the Orders in the FROM statement

@@ -17,7 +17,7 @@ class Solution:
 
         return False
 
-# [KEY] index conversion. 
+# [KEY] index manipulation. 
 # Work on linear array then convert 'mid' to the appropriate positions in the matrix
 # row = mid // n
 # col = mid % n
