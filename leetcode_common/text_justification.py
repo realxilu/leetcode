@@ -1,4 +1,5 @@
 class Solution:
+    # This is a helper method used to calculate the remaining spaces needed to pad to the right side
     def remaining_spaces(self, max_width, num_of_letters, num_spaces):
         return str(''.join((max_width - num_of_letters - num_spaces) * [' ']))
 
