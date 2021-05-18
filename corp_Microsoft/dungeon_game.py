@@ -1,4 +1,4 @@
-# dp[i][j] = minimal HP needed at grid (i, j)
+
 class Solution:
     def calculate_minimum_HP(self, dungeon):
         MAX = float('inf')
@@ -16,5 +16,8 @@ class Solution:
 
         return dp[0][0]
 
-# [KEY] 1) Going from bottom right of the map back to the origin
-# 2) In order to survive the knight needs to have at least 1 HP at the end
+# [KEY] dp[i][j] = minimal HP needed at grid (i, j)
+# 1) Go from bottom right back to the origin
+# 2) In order to survive, the knight needs to have at least 1 HP at the end
+# 3) require extra space to hold dp
+
