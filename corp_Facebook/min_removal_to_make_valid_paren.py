@@ -16,4 +16,4 @@ class Solution:
 
         return ''.join(s)
 
-# [KEY] record index location in stack instead of "("
+# [KEY] record index locations in the stack instead of '('
