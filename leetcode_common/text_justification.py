@@ -11,18 +11,18 @@ class Solution:
         # num_chars:  number of chars of words added to the cur_list
 
         for word in words:
-            # total number of chars in the cur_list
-            # + total number of chars in the current word
-            # + total number of words (minimum number of spaces between words) because one word requires at least one space
+            # + total number of chars in the cur_list, characters in the current word list
+            # + total number of chars in the current single word
+            # + total number of spaces (minimum number of spaces required) because one word requires at least one space
             if num_chars + len(word) + len(cur_list) - 1 >= max_width:
                 num_spaces = len(cur_list) - 1 or 1
 
                 # use round robin to pad spaces evenly in the remaining space
                 for i in range(max_width - num_chars):
-                    # add one space to each word in a round-robin fashion
+                    # append one space at a time to each word in a round-robin fashion
                     cur_list[i % num_spaces] += ' '
 
-                # note the spaces have already been distributed here thus just combine them to a row
+                # note the spaces have already been distributed here thus just combine them to form a row
                 res.append(''.join(cur_list))
                 # reset the cur list and char count for the remaining words
                 cur_list, num_chars = [], 0
