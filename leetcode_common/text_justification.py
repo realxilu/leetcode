@@ -17,7 +17,7 @@ class Solution:
             if num_chars + len(word) + len(cur_list) - 1 >= max_width:
                 num_spaces = len(cur_list) - 1 or 1
 
-                # ROUND ROBIN for padding spaces evenly
+                # use round robin to pad spaces evenly in the remaining space
                 for i in range(max_width - num_chars):
                     # add one space to each word in a round-robin fashion
                     cur_list[i % num_spaces] += ' '
