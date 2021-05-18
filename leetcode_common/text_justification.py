@@ -1,6 +1,6 @@
 class Solution:
     def fullJustify(self, words: List[str], max_width: int) -> List[str]:
-        res, current_list, num_of_letters = [],[], 0
+        res, current_list, num_of_letters = [], [], 0
         # res -> final result list
         # current_list -> list of words which are traversed but not yet added to result
         # num_of_letters -> number of chars corresponding to words in current_list
