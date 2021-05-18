@@ -32,3 +32,4 @@ class Solution:
         return res
 
 # [KEY] padding space in the ROUND ROBIN fashin is absolutely the key to solving the problem
+# I think 'or' in num_space is elegant
