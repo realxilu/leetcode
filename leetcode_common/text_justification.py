@@ -38,4 +38,6 @@ class Solution:
         return res
 
 # [KEY] padding space in the ROUND ROBIN fashin is absolutely the key to solving the problem
-# I think 'or' in num_space is elegant
+# 'or' in num_space is elegant. The original solution uses 'max' which was less readable
+# The last row could have been handled more elegantly using 'ljust'. However the interviewer might not accept it.
+# result.append(" ".join(current_list).ljust(maxWidth))
