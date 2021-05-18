@@ -27,9 +27,14 @@ class Solution:
             num_of_letters += len(word)
         
         # words in the last line might not enter the 'if' condition, thus the line below
-        res.append(' '.join(current_list).ljust(max_width))
+        num_spaces = len(current_list) - 1
+        last_row = (' '.join(current_list)) + self.remaining_spaces(max_width, num_of_letters, num_spaces)
+        res.append(last_row)
         
         return res
+    
+    def remaining_spaces(self, max_width, num_of_letters, num_spaces):
+        return str(''.join((max_width - num_of_letters - num_spaces) * [' ']))
 
 # [KEY] padding space in the ROUND ROBIN fashin is absolutely the key to solving the problem
 # I think 'or' in num_space is elegant
