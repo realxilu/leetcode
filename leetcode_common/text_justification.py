@@ -1,4 +1,7 @@
 class Solution:
+    def remaining_spaces(self, max_width, num_of_letters, num_spaces):
+        return str(''.join((max_width - num_of_letters - num_spaces) * [' ']))
+
     def fullJustify(self, words: List[str], max_width: int) -> List[str]:
         res, current_list, num_of_letters = [], [], 0
         # res:              final result
@@ -26,15 +29,13 @@ class Solution:
             current_list.append(word)
             num_of_letters += len(word)
         
-        # words in the last line might not enter the 'if' condition, thus the line below
+        # This is for the LAST row. The LAST row requires single space and left justified
+        # words in the last row might not enter the 'if' condition
         num_spaces = len(current_list) - 1
         last_row = (' '.join(current_list)) + self.remaining_spaces(max_width, num_of_letters, num_spaces)
         res.append(last_row)
         
         return res
-    
-    def remaining_spaces(self, max_width, num_of_letters, num_spaces):
-        return str(''.join((max_width - num_of_letters - num_spaces) * [' ']))
 
 # [KEY] padding space in the ROUND ROBIN fashin is absolutely the key to solving the problem
 # I think 'or' in num_space is elegant
