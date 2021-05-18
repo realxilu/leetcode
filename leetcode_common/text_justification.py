@@ -1,44 +1,45 @@
 class Solution:
     # This is a helper method used to calculate the remaining spaces needed to pad to the right side
-    def remaining_spaces(self, max_width, num_of_letters, num_spaces):
-        return str(''.join((max_width - num_of_letters - num_spaces) * [' ']))
+    def remaining_spaces(self, max_width, num_chars, num_spaces):
+        return str(''.join((max_width - num_chars - num_spaces) * [' ']))
 
     def fullJustify(self, words: List[str], max_width: int) -> List[str]:
-        res, current_list, num_of_letters = [], [], 0
-        # res:              final result
-        # current_list:     list of traversed words but not yet added to res
-        # num_of_letters:   number of chars of words added to the current_list
-        
+        res, cur_list, num_chars = [], [], 0
+        # res:        final result
+        # cur_list:   list of traversed words but not yet added to res
+        # num_spaces: number of spaces that need to be inserted, the number of spaces needed is one less than the size of cur_list
+        # num_chars:  number of chars of words added to the cur_list
+
         for word in words:
-            # total number of chars in the current_list
+            # total number of chars in the cur_list
             # + total number of chars in the current word
             # + total number of words (minimum number of spaces between words) because one word requires at least one space
-            if num_of_letters + len(word) + len(current_list) > max_width:
-                num_spaces = len(current_list) - 1 or 1
-                
+            if num_chars + len(word) + len(cur_list) - 1 >= max_width:
+                num_spaces = len(cur_list) - 1 or 1
+
                 # ROUND ROBIN for padding spaces evenly
-                for i in range(max_width - num_of_letters):
+                for i in range(max_width - num_chars):
                     # add one space to each word in a round-robin fashion
-                    current_list[i % num_spaces] += ' '
-                
+                    cur_list[i % num_spaces] += ' '
+
                 # note the spaces have already been distributed here thus just combine them to a row
-                res.append(''.join(current_list))
+                res.append(''.join(cur_list))
                 # reset the cur list and char count for the remaining words
-                current_list, num_of_letters = [], 0
-            
+                cur_list, num_chars = [], 0
+
             # add current word to the list and add length to char count
-            current_list.append(word)
-            num_of_letters += len(word)
-        
+            cur_list.append(word)
+            num_chars += len(word)
+
         # This is for the LAST row. The LAST row requires single space and left justified
         # words in the last row might not enter the 'if' condition
-        num_spaces = len(current_list) - 1
-        last_row = (' '.join(current_list)) + self.remaining_spaces(max_width, num_of_letters, num_spaces)
+        num_spaces = len(cur_list) - 1
+        last_row = (' '.join(cur_list)) + self.remaining_spaces(max_width, num_chars, num_spaces)
         res.append(last_row)
-        
+
         return res
 
 # [KEY] padding space in the ROUND ROBIN fashin is absolutely the key to solving the problem
 # 'or' in num_space is elegant. The original solution uses 'max' which was less readable
 # The last row could have been handled more elegantly using 'ljust'. However the interviewer might not accept it.
-# result.append(" ".join(current_list).ljust(maxWidth))
+# [ALTERNATIVE] result.append(' '.join(cur_list).ljust(maxWidth))
