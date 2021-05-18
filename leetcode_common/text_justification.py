@@ -1,19 +1,20 @@
 class Solution:
     def fullJustify(self, words: List[str], max_width: int) -> List[str]:
         res, current_list, num_of_letters = [], [], 0
-        # res -> final result list
-        # current_list -> list of words which are traversed but not yet added to result
-        # num_of_letters -> number of chars corresponding to words in current_list
+        # res:              final result
+        # current_list:     list of traversed words but not yet added to res
+        # num_of_letters:   number of chars of words added to the current_list
         
         for word in words:
-            # total no. of chars in current_list + total no. of chars in current word
-            # + total no. of words (min. number of spaces between words) because 1 word requir 1 space at least
+            # total number of chars in the current_list
+            # + total number of chars in the current word
+            # + total number of words (minimum number of spaces between words) because one word requires at least one space
             if num_of_letters + len(word) + len(current_list) > max_width:
                 num_spaces = len(current_list) - 1 or 1
                 
-                # round robin for padding spaces evenly
+                # ROUND ROBIN for padding spaces evenly
                 for i in range(max_width - num_of_letters):
-                    # add 1 space to each word in a round-robin fashion
+                    # add one space to each word in a round-robin fashion
                     current_list[i % num_spaces] += ' '
                 
                 # note the spaces have already been distributed here thus just combine them to a row
@@ -30,4 +31,4 @@ class Solution:
         
         return res
 
-# [KEY] padding space in the round robin fashin is absolutely the key to solving the problem
+# [KEY] padding space in the ROUND ROBIN fashin is absolutely the key to solving the problem
