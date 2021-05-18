@@ -25,7 +25,9 @@ class Solution:
             current_list.append(word)
             num_of_letters += len(word)
         
-        # NOTE words in the last line might not enter the 'if' condition
+        # words in the last line might not enter the 'if' condition, thus the line below
         res.append(' '.join(current_list).ljust(max_width))
         
         return res
+
+# [KEY] padding space in the round robin fashin is absolutely the key to solving the problem
