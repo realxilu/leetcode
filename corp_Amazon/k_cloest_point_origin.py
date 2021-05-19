@@ -23,6 +23,6 @@ class Solution:
 # Runtime:
 # Inserting an item to a heap of size k take O(logK) time.
 # And we do this for each item points.
-# So runtime is O(N * logK) where N is the length of points.
+# So runtime is O(NlogK) where N is the number of points.
 
 # Space: O(K) for our heap.
