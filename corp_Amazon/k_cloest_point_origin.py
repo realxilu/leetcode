@@ -1,4 +1,5 @@
 import heapq
+
 class Solution:
     def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:
         heap = []
@@ -13,6 +14,12 @@ class Solution:
         return [(x, y) for (dist, x, y) in heap]
 
 # [KEY]
+# why do we have a negative sign in the Euclidean distance?
+# Because we are faking the max heap here
+
+# why do we want to use max-heap here?
+# because we want to keep the smallest values possible
+
 # Runtime:
 # Inserting an item to a heap of size k take O(logK) time.
 # And we do this for each item points.
