@@ -16,7 +16,7 @@ class Solution:
     def dfs(self, grid, i, j):
         # 1) out of bound
         # 2) hit water
-        if not (0 <= i < len(grid)) or not (0 <= j < len(grid[0])) or grid[i][j] == '0':
+        if not ((0 <= i < len(grid)) and (0 <= j < len(grid[0]))) or grid[i][j] == '0':
             return  # backtrack
 
         # erase current land grid by marking it water
