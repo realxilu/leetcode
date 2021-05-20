@@ -19,3 +19,6 @@ class Solution(object):
                 cur_string += c
         
         return cur_string
+
+# [KEY] reset after append is the key
+# [TEMPLATE] whenever brackets are present, try to associate with stack
