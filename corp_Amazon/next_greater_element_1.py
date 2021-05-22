@@ -2,10 +2,10 @@ class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         dic, stack = {}, []
 
-        for x in nums2:
-            while stack and stack[-1] < x:
-                dic[stack.pop()] = x
-            stack.append(x)
+        for cur_num in nums2:
+            while stack and stack[-1] < cur_num:
+                dic[stack.pop()] = cur_num
+            stack.append(cur_num)
 
         return [dic.get(x, -1) for x in nums1]
 
