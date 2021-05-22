@@ -4,8 +4,9 @@ class Solution:
 
         for cur_num in nums2:
             while stack and stack[-1] < cur_num:
+                # dump numbers into the dic as long as they are smaller than the current element
                 dic[stack.pop()] = cur_num
-            # stack adds a path
+            # stack records a path
             stack.append(cur_num)
 
         return [dic.get(x, -1) for x in nums1]
