@@ -9,7 +9,7 @@ class Solution:
             # as long as previous stacked heights are higher than the current height[i]
             while height[stack[-1]] > height[i]:
                 h = height[stack.pop()]
-                # NOTE this stack[-1] isn't the same as the previous stack[-1] because there is a stack.pop() on the top
+                # NOTE this stack[-1] isn't the same as the previous stack[-1]
                 width = i - stack[-1] - 1
                 res = max(res, h * width)
             stack.append(i)
