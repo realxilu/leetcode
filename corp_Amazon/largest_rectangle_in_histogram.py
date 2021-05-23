@@ -51,7 +51,11 @@ class Solution:
 # |     |
 # stop  i
 # the basic idea is to back scan from the current position 'i' to all previous bars as long as they are greater than it.
-
+# [HINT] draw rectangles from the current position to previous position until hit the one that is smaller
+# after done, move i to the left and do the above again
+# after done, move i to the left and do the above again
+# ...
+# till hit stop
 
 # [KEY] we can only use the shortest height to calculate the area
 
