@@ -18,7 +18,7 @@ class Solution:
 
 # [KEY] if previous heights are taller than the current height, keep popping them out of the stack
 # previous heights don't have to be strictly descending as long as they are shorter than the current height
-# the stack records previously traversed indices 
+# the stack holds previously traversed indices
 
 
 #
