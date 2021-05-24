@@ -10,3 +10,6 @@ class Solution:
             num = (num - 1) // 26
 
         return ''.join(res)
+
+# ord: convert alphabet to number
+# chr: convert number to alphabet
