@@ -7,7 +7,7 @@ class Solution:
                 candidate = i
 
         for i in range(n):
-            # i != candidate is important bc the candidate can know itself
+            # 'i != candidate' is important since the candidate can know itself (given how the graph is given)
             if i != candidate and knows(candidate, i):
                 return -1
 
