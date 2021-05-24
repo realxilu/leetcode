@@ -10,5 +10,4 @@ def inorder(root):
         cur = node.right
 
 # [KEY] stack memorizes the path leading up to the current node
-
-
+# [ATTENTION] this iterative approach isn't complicated, but still require some pratice.
