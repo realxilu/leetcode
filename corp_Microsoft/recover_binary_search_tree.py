@@ -36,6 +36,7 @@ class Solution:
 # thus prev is less than the next
 
 # [ITERATIVE][STACK]
+# Go left as long as there is a left node, also record the path in 'stack' so we can backtrack later
 def recoverTree(self, root):
     cur, prev, records, stack = root, TreeNode(float('-inf')), [], []
     while cur or stack:
