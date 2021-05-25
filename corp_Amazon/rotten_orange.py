@@ -11,9 +11,12 @@ class Solution:
                 return -1
             
             # compute rotten orange using directional vectors
-            rotting = { (i + di, j + dj) for i, j in rotting for di,
-                       dj in [(0, 1), (1, 0), (0, -1), (-1, 0)] if (i+di, j+dj) in fresh }
+            rotting = {(i + di, j + dj) for i, j in rotting for di,
+                       dj in [(0, 1), (1, 0), (0, -1), (-1, 0)] if (i + di, j + dj) in fresh}
             fresh -= rotting
             step += 1
         
         return step
+
+# [KEY] usage of set instead of using 2d array
+# [ATTENTION] try to write list comprehension yourself
