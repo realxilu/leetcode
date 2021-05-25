@@ -33,3 +33,27 @@ class Solution:
 
 # [KEY] use global var 'a', 'b' to record nodes that are out of place. In in-order print, BST shall print in ascending order
 # thus prev is less than the next
+
+# [ITERATIVE][STACK]
+def recoverTree(self, root):
+    cur, prev, records, stack = root, TreeNode(float('-inf')), [], []
+    while cur or stack:
+        while cur:
+            stack.append(cur)
+            cur = cur.left
+        node = stack.pop()
+        
+        # If nodes are out of place
+        if prev.val > node.val:
+            # record the current out of place couple
+            records.append((prev, node))
+        prev, cur = node, node.right
+
+    # out of order nodes are ajacent
+    if len(records) == 1: 
+        records[0][0].val, records[0][1].val = records[0][1].val, records[0][0].val
+    # out of order nodes are not ajacent
+    else:
+        records[0][0].val, records[1][1].val = records[1][1].val, records[0][0].val
+
+# [TODO] Morris
