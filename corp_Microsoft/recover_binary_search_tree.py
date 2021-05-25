@@ -15,6 +15,7 @@ class Solution:
 
         self.a.val, self.b.val = self.b.val, self.a.val
 
+    # [RECURSIVE]
     def traverse(self, node):
         if not node:
             return
