@@ -19,7 +19,6 @@ class Solution:
         for i in range(index, len(nums)):
             self.backtrack(nums, target - nums[i], i, path + [nums[i]], res)
 
-# [KEY] 'backtrack' and 'backtrack' are common names for backtrack type of problems.
-# It can be easily seen as a backtrack problem with diagrams. Say the target is 7 and it is the root and then it has different combos as branches and leaves.
-
-# 'return' is synonymous as backtrack
+# [KEY] 'backtrack' and 'dfs' are standard names for naming recursive backtrack functions.
+# This type of problems can be easily seen as a backtrack problem with diagrams. 
+# Say the target is 7 and it is the root and then it has different combos as branches and leaves.
