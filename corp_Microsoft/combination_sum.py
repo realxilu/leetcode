@@ -6,13 +6,15 @@ class Solution1:
 
         return res
 
+    # [KEY] need a tree diagram, things would be much easier
+    # [KEY] there is a template for backtrack type of problems
     def dfs(self, nums, target, index, path, res):
         if target < 0:
-            return  # backtracking
+            return  # just backtrack here
 
         if target == 0:
             res.append(path)
-            return  # backtracking
+            return  # add to res set then backtrack
 
         for i in range(index, len(nums)):
             self.dfs(nums, target - nums[i], i, path + [nums[i]], res)
@@ -20,6 +22,7 @@ class Solution1:
 # [KEY] 'dfs' and 'backtrack' are common names for backtrack type of problems.
 # It can be easily seen as a backtrack problem with diagrams. Say the target is 7 and it is the root and then it has different combos as branches and leaves.
 
+# 'return' is synonymous as backtrack
 class Solution2:
     # faster
     def combination_sum(self, candidates, target):
