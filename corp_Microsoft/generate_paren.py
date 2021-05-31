@@ -1,17 +1,17 @@
 class Solution:
-    def generate_parenthesis(self, n):
+    def generateParenthesis(self, n):
         res = []
         self.backtrack(res, '', 0, 0, n)
 
         return res
 
-    def backtrack(self, res, string, open_, close, max_):
-        if len(string) == max_ * 2:
+    def backtrack(self, res, string, _open, close, _max):
+        if len(string) == _max * 2:
             res.append(string)
             return
 
-        if open_ < max_:
-            self.backtrack(res, string + '(', open_ + 1, close, max_)
+        if _open < _max:
+            self.backtrack(res, string + '(', _open + 1, close, _max)
 
-        if close < open_:
-            self.backtrack(res, string + ')', open_, close + 1, max_)
+        if close < _open:
+            self.backtrack(res, string + ')', _open, close + 1, _max)
