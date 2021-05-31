@@ -1,7 +1,6 @@
 class Solution:
     def generate_parenthesis(self, n):
         res = []
-
         self.backtrack(res, '', 0, 0, n)
 
         return res
