@@ -8,19 +8,19 @@ class Solution:
 
     # [KEY] easier to visualize the problem by diagraming a tree, then it addresses the question why use backtrack
     # [KEY] utilize the template for backtracking problems
-    def backtrack(self, nums, target, index, path, res):
+    def backtrack(self, nums, target, index, tmp_list, res):
         # exit condition I:
         if target < 0:
             return  # just backtrack here
 
         # exit condition II:
         if target == 0:
-            res.append(path)
+            res.append(tmp_list)
             return  # add to res set then backtrack
 
         # [PYTHON] 'i' is moving in range(start, stop)
         for i in range(index, len(nums)):
-            self.backtrack(nums, target - nums[i], i, path + [nums[i]], res)
+            self.backtrack(nums, target - nums[i], i, tmp_list + [nums[i]], res)
 
 # [KEY] 'backtrack' and 'dfs' are standard names for naming recursive backtrack functions.
 # This type of problems can be easily seen as a backtrack problem with diagrams. 

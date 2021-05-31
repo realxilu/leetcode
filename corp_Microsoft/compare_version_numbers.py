@@ -1,26 +1,14 @@
 class Solution:
-    def compare_version(self, v1, v2):
-        l1, l2 = v1.split('.'), v2.split('.')
+    def compareVersion(self, version1, version2):
+        versions1 = [int(x) for x in version1.split('.')]
+        versions2 = [int(x) for x in version2.split('.')]
 
-        l1 = list(map(lambda x: int(x), l1))
-        l2 = list(map(lambda x: int(x), l2))
-
-        l1_len, l2_len = len(l1), len(l2)
-        min_len, max_len = min(l1_len, l2_len), max(l1_len, l2_len)
-
-        i = 0
-        while i < min_len:
-            if l1[i] < l2[i]:
-                return -1
-            if l1[i] > l2[i]:
+        for i in range(max(len(versions1), len(versions2))):
+            v1 = versions1[i] if i < len(versions1) else 0
+            v2 = versions2[i] if i < len(versions2) else 0
+            if v1 > v2:
                 return 1
-            i += 1
-
-        while i < max_len:
-            if i >= len(l1) and l2[i] > 0:
+            elif v1 < v2:
                 return -1
-            if i >= len(l2) and l1[i] > 0:
-                return 1
-            i += 1
 
         return 0
