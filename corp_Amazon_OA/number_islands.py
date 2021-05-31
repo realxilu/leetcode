@@ -1,8 +1,8 @@
-# '1' is land, '0' is water/visisted
+# '1' is land
+# '0' is water or visisted
 class Solution:
     def numIslands(self, grid):
         count = 0
-
         for i in range(len(grid)):
             for j in range(len(grid[0])):
                 if grid[i][j] == '1':
@@ -19,7 +19,7 @@ class Solution:
         if not ((0 <= i < len(grid)) and (0 <= j < len(grid[0]))) or grid[i][j] == '0':
             return  # backtrack
 
-        # erase current land grid by marking it water
+        # do visit and mark the cell water
         grid[i][j] = '0'
 
         self.dfs(grid, i + 1, j)
