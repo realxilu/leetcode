@@ -18,7 +18,7 @@ class Solution:
             res.append(path)
             return  # add to res set then backtrack
 
-        # 'i' is dynamic here
+        # [PYTHON] 'i' is moving in range(start, stop)
         for i in range(index, len(nums)):
             self.backtrack(nums, target - nums[i], i, path + [nums[i]], res)
 
