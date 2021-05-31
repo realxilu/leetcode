@@ -6,7 +6,7 @@ class Solution:
 
         return res
 
-    # [KEY] easier to visualize the problem by diagraming a tree
+    # [KEY] easier to visualize the problem by diagraming a tree, then it addresses the question why use backtrack
     # [KEY] utilize the template for backtracking problems
     def backtrack(self, nums, target, index, path, res):
         # exit condition I:
