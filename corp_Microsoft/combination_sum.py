@@ -1,21 +1,24 @@
 class Solution:
     # standard backtracking
     def combinationSum(self, candidates, target):
-        res = []  # needs to be referenced to be returned
+        res = [] # pass by reference
         self.backtrack(candidates, target, 0, [], res)
 
         return res
 
-    # [KEY] need a tree diagram, things would be much easier
-    # [KEY] there is a template for backtrack type of problems
+    # [KEY] easier to visualize the problem by diagraming a tree
+    # [KEY] utilize the template for backtracking problems
     def backtrack(self, nums, target, index, path, res):
+        # exit condition I:
         if target < 0:
             return  # just backtrack here
 
+        # exit condition II:
         if target == 0:
             res.append(path)
             return  # add to res set then backtrack
 
+        # 'i' is dynamic here
         for i in range(index, len(nums)):
             self.backtrack(nums, target - nums[i], i, path + [nums[i]], res)
 
