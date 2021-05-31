@@ -1,12 +1,11 @@
 from collections import deque
-
-
 class Solution:
-    def clone_graph(self, root):
-        dic = {}
+    def cloneGraph(self, root):
+        if not root:
+            return None
 
         # 1st BFS: create node-to-node mapping
-        q = deque([root])
+        dic, q = {}, deque([root])
         while q:
             node = q.popleft()
             dic[node] = Node(node.val, [])
@@ -16,8 +15,7 @@ class Solution:
                     q.append(nb)
 
         # 2nd BFS: associate nodes
-        q = deque([root])
-        s = set()
+        q, s = deque([root]), set()
         while q:
             node = q.popleft()
 
@@ -36,8 +34,8 @@ class Solution:
 class Node:
     def __init__(self, val, neighbors):
         self.val = val
-        self.neighbors = neighbors # list
+        self.neighbors = neighbors  # list
 
-# [KEY] bfs traversal + hashmap 
+# [KEY] bfs traversal + hashmap
 # 1st pass created mapped nodes
 # 2nd pass establish relationships between the old and new
