@@ -6,6 +6,10 @@ print(-a)
 a = [1, 2, 3]
 print(a[::-1])
 
+# DEEP COPY (slice)
+a = [1,2,3,4,5]
+b = a[:]
+
 # FAST SWAP
 x, y = 1, 2
 x, y = y, x

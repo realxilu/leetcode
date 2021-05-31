@@ -17,6 +17,8 @@ class Solution1:
         for i in range(index, len(nums)):
             self.dfs(nums, target - nums[i], i, path + [nums[i]], res)
 
+# [KEY] 'dfs' and 'backtrack' are common names for backtrack type of problems.
+# It can be easily seen as a backtrack problem with diagrams. Say the target is 7 and it is the root and then it has different combos as branches and leaves.
 
 class Solution2:
     # faster
