@@ -16,8 +16,8 @@ def largestValuesInTreeRows(root):
             if node.right:
                 q.append(node.right)
 
-        my_max = max(level)
-        res.append(my_max)
+        row_max = max(level)
+        res.append(row_max)
 
     return res
 
