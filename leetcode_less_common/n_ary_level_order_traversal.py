@@ -8,9 +8,9 @@ class Solution:
 
         q, res = deque([root]), []
         while q:
-            len_, level = len(q), []
+            level_len, level = len(q), []
 
-            for x in range(len_):
+            for _ in range(level_len):
                 node = q.popleft()
                 level.append(node.val)
 
