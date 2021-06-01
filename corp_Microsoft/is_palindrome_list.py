@@ -1,8 +1,3 @@
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
         slow = fast = head
@@ -34,4 +29,9 @@ class Solution:
 
         return new_head
 
-# [TWO_POINTER]
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+# [TWO_POINTER] O(N) time O(1) space
