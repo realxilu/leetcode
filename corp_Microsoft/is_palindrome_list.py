@@ -18,7 +18,7 @@ class Solution:
 
         return True
 
-    # note this is not in-place
+    # note this is not in-place and it returns a new head
     def reverse_list(self, head):
         if not head or not head.next:
             return head
