@@ -15,3 +15,4 @@ class Solution:
         return x + 1 if x > 0 else 1
 
 # [KEY] don't be lazy, diagram it out. sometimes it is hard to think inside your head without viz
+# Once I wrote out the indices and numbers, the relationship between x and i became much claerer.
