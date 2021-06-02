@@ -1,6 +1,4 @@
 from collections import deque
-
-
 class Solution:
     # [BEST]
     def license_key_formatting(self, s, k):
@@ -14,7 +12,6 @@ class Solution:
             i += k
 
         return res
-
 
 class Solution2:
     # [MINE]
