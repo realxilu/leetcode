@@ -33,3 +33,5 @@ class Solution:
             return self.tens[num // 10] + ' ' + self._helper(num % 10)
         else:
             return self.less_than_20[num // 100] + ' Hundred ' + self._helper(num % 100)
+
+# [KEY] Take care each intervals | x > 1000 | 100 < x < 1000 | 20 < x < 100 | 0 < x < 20 |
