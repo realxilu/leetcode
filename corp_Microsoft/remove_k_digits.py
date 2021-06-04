@@ -1,21 +1,22 @@
-# const removeKdigits = (num, k) = > {
-#     let res = []
+class Solution:
+    def removeKdigits(self, num: str, k: int) -> str:
+        stack = []
+        for c in num:
+            # universal case: we need to know if the previous digit is bigger than current, if so remove the prev. For this we need stack. 
+            while stack and stack[-1] > c and k:
+                stack.pop()
+                k -= 1
 
-#     num += ''
-#     for (let c of num) {
-#         while (res.length & & res[res.length - 1] > c & & k) {
-#             // make sure digits in 'res' are in ascending order
-#             res.pop()
-#             k--
-#         }
+            # case: '0000000045' in this case we don't ever want to push leading 0s
+            if stack or c != '0':
+                stack.append(c)
 
-#         // can't have leading '0's => De Morgan's law if hard to read
-#         if (res.length | | c !== '0') res.push(c)
-#     }
+        # case: '1234567' in the case of digits are strickly ascending, we never popped anything in the first for loop, so pop k of them as required
+        while stack and k:
+            stack.pop()
+            k -= 1
 
-#     // need to remove k digits in total. pay attention to the scope of 'k'
-#     while (res.length & & k--) res.pop()
+        return ''.join(stack) if stack else '0'
 
-#     return res.length ? res.join(''): '0'
-# }
-# TODO
+# [KEY][STACK] if we need to have information for something happened before the current element, we need stack to retain such info
+# If the digit is in front of the current one and it is bigger, then we pop it. 
