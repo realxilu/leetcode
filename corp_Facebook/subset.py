@@ -4,7 +4,7 @@ class Solution:
         res.append([])
 
         for x in nums:
-            _len = len(res)
+            _len = len(res) # [KEY] record the current res length BEFORE making modifications
             for i in range(_len):
                 res.append(res[i].copy())
             for i in range(_len):
