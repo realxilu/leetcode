@@ -1,3 +1,4 @@
+# [ATTENTION] can't do it using [TWO_POINTERS]
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         prev_sum, count = 0, 0
