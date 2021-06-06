@@ -4,13 +4,12 @@ class Node:
         self.v = v
         self.prev = None
         self.next = None
-
 class LRUCache:
     def __init__(self, capacity):
         self.capacity = capacity
         self.dic = {}
-        self.head = Node(-1, -1) # dummy
-        self.tail = Node(-1, -1) # also dummy
+        self.head = Node(-1, -1)  # dummy
+        self.tail = Node(-1, -1)  # also dummy
         self.head.next = self.tail
         self.tail.prev = self.head
 
@@ -22,32 +21,33 @@ class LRUCache:
 
             return node.v
 
-        return -1
+        return -1 # per spec
 
     def put(self, k, v):
         if k in self.dic:
             self._remove(self.dic[k])
 
-        node = Node(k, v)
-        self._add(node)
-        self.dic[k] = node
+        new_node = Node(k, v)
+        self._add(new_node)
+        self.dic[k] = new_node
 
+        # evict if length is great than 1
         if len(self.dic) > self.capacity:
-            node = self.head.next
-            self._remove(node)
-            del self.dic[node.k]
+            head_next = self.head.next
+            self._remove(head_next)
+            del self.dic[head_next.k]
 
-    # [KEY]
     def _remove(self, node):
-        prev = node.prev
-        next = node.next
-        prev.next = next
-        next.prev = prev
+        _prev = node.prev
+        _next = node.next
+        _prev.next = _next
+        _next.prev = _prev
 
-    # [KEY]
     def _add(self, node):
-        prev = self.tail.prev
-        prev.next = node
+        _prev = self.tail.prev
+        _prev.next = node
         self.tail.prev = node
-        node.prev = prev
+        node.prev = _prev
         node.next = self.tail
+
+# [KEY] \images\lru.JPG
