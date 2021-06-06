@@ -4,12 +4,13 @@ class Node:
         self.v = v
         self.prev = None
         self.next = None
+
 class LRUCache:
     def __init__(self, capacity):
         self.capacity = capacity
         self.dic = {}
-        self.head = Node(0, 0)
-        self.tail = Node(0, 0)
+        self.head = Node(-1, -1) # dummy
+        self.tail = Node(-1, -1) # also dummy
         self.head.next = self.tail
         self.tail.prev = self.head
 
@@ -36,17 +37,17 @@ class LRUCache:
             self._remove(node)
             del self.dic[node.k]
 
+    # [KEY]
     def _remove(self, node):
         prev = node.prev
         next = node.next
         prev.next = next
         next.prev = prev
 
+    # [KEY]
     def _add(self, node):
         prev = self.tail.prev
         prev.next = node
         self.tail.prev = node
         node.prev = prev
         node.next = self.tail
-
-# [KEY][COMPOSITE_DATA_STRUCTURE] hashmap + doubly linkedlist

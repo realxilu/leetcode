@@ -1,16 +1,18 @@
 # TODO: BUG!
-class Solution:
-    def subarray_sum(self, nums, k):
-        sum_, res = 0, 0
-        dic = {}
-        dic[0] = 1
+# const subarraySum = (nums, k) = > {
+#     let sum = 0, res = 0
+#     let map = new Map()
+#     map.set(0, 1)
 
-        for x in range(len(nums)):
-            sum_ += x
+#     for (let i=0
+#          i < nums.length
+#          i++) {
+#         sum += nums[i]
+#         if (map.has(sum - k))
+#         res += map.get(sum - k)
 
-            if sum_ - k in dic:
-                res += dic[sum_ - k]
+#         map.set(sum, (map.get(sum) | | 0) + 1)
+#     }
 
-            dic[sum_] = (dic.get(sum_) or 0) + 1
-
-        return res
+#     return res
+# }
