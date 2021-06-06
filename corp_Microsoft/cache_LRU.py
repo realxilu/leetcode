@@ -49,5 +49,5 @@ class LRUCache:
         self.tail.prev = node
         node.prev = _prev
         node.next = self.tail
-
 # [KEY] \images\lru.JPG
+# 1) use two dummy nodes 2) use two helper functions
