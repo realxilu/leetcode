@@ -7,8 +7,6 @@ class Solution:
             _len = len(res)
             for i in range(_len):
                 res.append(res[i].copy())
-                i += 1
-
             for i in range(_len):
                 res[i].append(x)
 
