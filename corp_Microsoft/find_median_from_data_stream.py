@@ -5,6 +5,7 @@ class MedianFinder:
         self.small = []  # max heap (invert min-heap) -> negative numbers
         self.large = []  # min heap -> positive numbers
 
+    # void addNum(int num) adds the integer num from the data stream to the data structure.
     def addNum(self, num):
         if len(self.small) == len(self.large):
             # to heappushpop into small, we need negative numbers and before putting them into large we need reverse of that
@@ -14,6 +15,7 @@ class MedianFinder:
             # num is positive thus we need the heappushpop to be negative
             heappush(self.small, -heappushpop(self.large, num))
 
+    # double findMedian() returns the median of all elements so far. Answers within 10-5 of the actual answer will be accepted.
     def findMedian(self):
         if len(self.small) == len(self.large):
             return float(self.large[0] - self.small[0]) / 2.0
