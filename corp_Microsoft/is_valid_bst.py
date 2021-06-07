@@ -1,13 +1,18 @@
 class Solution:
-    def isValidBST(self, root, prev_min=float('inf'), prev_max=float('-inf')):
+    def isValidBST(self, root, min_so_far=float('inf'), max_so_far=float('-inf')):
         if not root:
             return True
 
-        if root.val <= prev_max or root.val >= prev_min:
+        # if the current node happens to be a right child,
+        # it's supposed to be great than all previous max (rightmost position)
+        if not (root.val > max_so_far):
             return False
 
-        cur_min = min(prev_min, root.val)
-        cur_max = max(prev_max, root.val)
+        # if the current node happens to be a left child
+        if not (root.val < min_so_far):
+            return False
 
-        return self.isValidBST(root.left,  cur_min, prev_max) and \
-               self.isValidBST(root.right, prev_min, cur_max)
+        cur_min, cur_max = min(min_so_far, root.val), max(max_so_far, root.val)
+
+        return self.isValidBST(root.left,  cur_min, max_so_far) and \
+            self.isValidBST(root.right, min_so_far, cur_max)
