@@ -11,7 +11,7 @@ class Solution:
 
     def get_min(self, node):
         if not node:
-            return float('inf')
+            return float('inf') # min is initialized to +infinity in case of a null node
         while node.left:
             node = node.left
 
@@ -19,7 +19,7 @@ class Solution:
 
     def get_max(self, node):
         if not node:
-            return float('-inf')
+            return float('-inf') # max is initialzied to -infinity in case of a null node
         while node.right:
             node = node.right
 
