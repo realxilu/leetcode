@@ -22,15 +22,15 @@ class Solution:
             return False
 
         # first character is found, check the remaining part
-        tmp = board[i][j]
+        recorded_val = board[i][j]
         # avoid visit agian
         board[i][j] = "#"
         # check whether can find "word" along one direction
         res = self.dfs(board, i + 1, j, word[1:]) or \
-            self.dfs(board, i - 1, j, word[1:]) or \
-            self.dfs(board, i, j + 1, word[1:]) or \
-            self.dfs(board, i, j - 1, word[1:])
-        board[i][j] = tmp
+              self.dfs(board, i - 1, j, word[1:]) or \
+              self.dfs(board, i, j + 1, word[1:]) or \
+              self.dfs(board, i, j - 1, word[1:])
+        board[i][j] = recorded_val
 
         return res
 
