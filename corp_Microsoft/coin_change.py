@@ -14,10 +14,11 @@ class Solution:
     def coinChange(self, coins, amount):
         dp = [0] + [float('inf')] * amount # [0] is the base case, it takes 0 coin to change 0 coin
 
-        # build table bottom up: $1, $2, $3 ... $x
+        # check all amounts* from $1 to 11$, build tables ground up
         for x in range(1, amount + 1):
-            # check each denomination
+            # check all coins in $1,$2,$5,$10
             for i in range(len(coins)):
+                # if current coin is less than or equal to the amount
                 if coins[i] <= x:
                     # either use or not use the coin
                     # [0, inf, inf, inf, inf, ... inf ]
