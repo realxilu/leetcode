@@ -1,56 +1,21 @@
-class Node:
-    def __init__(self, k, v):
-        self.k = k
-        self.v = v
-        self.prev = None
-        self.next = None
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        m, n = len(matrix), len(matrix[0])
 
-class LRUCache:
-    def __init__(self, capacity):
-        self.capacity = capacity
-        self.dic = {}
-        self.head = Node(-1, -1)  # dummy
-        self.tail = Node(-1, -1)  # also dummy
-        self.head.next = self.tail
-        self.tail.prev = self.head
+        if m == 0 or m == 1:
+            return matrix
 
-    def get(self, k):
-        if k in self.dic:
-            node = self.dic[k]
-            self._remove(node)
-            self._add(node)
+        self._reverse(matrix)
 
-            return node.v
+        for i in range(m):
+            for j in range(n):
+                if i < j:
+                    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
-        return -1
+    def _reverse(self, arr):
+        i, j = 0, len(arr) - 1
 
-    def put(self, k, v):
-        if k in self.dic:
-            self._remove(self.dic[k])
-
-        new_node = Node(k, v)
-        self._add(new_node)
-        self.dic[k] = new_node
-
-        # evict if length is great than 1
-        if len(self.dic) > self.capacity:
-            head_next = self.head.next
-            self._remove(head_next)
-            del self.dic[head_next.k]
-
-    def _remove(self, node):
-        _prev = node.prev
-        _next = node.next
-        _prev.next = _next
-        _next.prev = _prev
-
-    def _add(self, node):
-        _prev = self.tail.prev
-        _prev.next = node
-        self.tail.prev = node
-        node.prev = _prev
-        node.next = self.tail
-
-# [KEY] doubly-linked list and hashmap
-# dummy value --- node --- node --- node --- dummy value
-
+        while i < j:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+            j -= 1
