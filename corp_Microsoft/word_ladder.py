@@ -1,8 +1,6 @@
 from collections import deque
-
-
 class Solution:
-    def ladder_length(self, begin_word, end_word, word_list):
+    def ladderLength(self, begin_word, end_word, word_list):
         word_set = set(word_list)
         alpha = [chr(x) for x in range(ord('a'), ord('z') + 1)]
 
