@@ -9,3 +9,6 @@ class Solution:
             res += ord(c) - ord(A) + 1
         
         return res
+
+# ord: convert alphabet to number
+# chr: convert number to alphabet
