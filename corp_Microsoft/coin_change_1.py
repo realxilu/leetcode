@@ -6,7 +6,7 @@
 
 # ----------------------------------------------------------------------------------------------------
 
-# x = current amount, for example 1 cent 2 cents .. 17 cents
+# cur_amt = current amount, for example 1 cent 2 cents .. 17 cents
 # i = coin denomiation index
 
 class Solution:
@@ -15,14 +15,14 @@ class Solution:
         dp = [0] + [float('inf')] * amount # [0] is the base case, it takes 0 coin to change 0 coin
 
         # check all amounts* from $1 to 11$, build tables ground up
-        for x in range(1, amount + 1):
+        for cur_amt in range(1, amount + 1):
             # check all coins in $1,$2,$5,$10
             for i in range(len(coins)):
                 # if current coin is less than or equal to the amount
-                if coins[i] <= x:
+                if coins[i] <= cur_amt:
                     # either use or not use the coin
                     # [0, inf, inf, inf, inf, ... inf ]
-                    dp[x] = min(dp[x], dp[x - coins[i]] + 1)
+                    dp[cur_amt] = min(dp[cur_amt], dp[cur_amt - coins[i]] + 1)
 
         return -1 if dp[amount] > amount else dp[amount]
 
