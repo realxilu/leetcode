@@ -1,13 +1,13 @@
 class Solution:
-    def titleToNumber(self, s: str) -> int:
-        if not s:
+    def titleToNumber(self, string: str) -> int:
+        if not string:
             return -1
 
         res = 0
-        for c in s:
+        for c in string:
             res *= 26
-            res += ord(c) - ord(A) + 1
-        
+            res += ord(c) - ord('A') + 1
+
         return res
 
 # ord: convert alphabet to number
