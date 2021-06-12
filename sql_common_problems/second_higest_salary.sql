@@ -1,4 +1,4 @@
--- Write a SQL query to get the second highest salary from the Employee table.
+-- Write a SQL query to get the second highest salary FROM the Employee table.
 -- +----+--------+
 -- | Id | Salary |
 -- +----+--------+
@@ -17,5 +17,10 @@
 SELECT MAX(Salary)
 FROM Employee
 WHERE Salary < (SELECT MAX(Salary) FROM Employee);
+
+-- my version
+select MAX(Salary) AS "SecondHighestSalary" 
+FROM Employee 
+WHERE Salary != (SELECT MAX(Salary) FROM Employee);
 
 -- [KEY] nested sql statement
