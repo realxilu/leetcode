@@ -1,21 +1,20 @@
-class Solution(object):
-    def myAtoi(self, s):
-        digits = list(s.strip())
-
-        if len(digits) == 0:
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        s = s.strip()
+        if not s:
             return 0
 
-        sign = -1 if digits[0] == '-' else 1
+        sign = -1 if s[0] == '-' else 1
+        if s[0] == '+' or s[0] == '-':
+            s = s[1:]
 
-        if digits[0] in ('-', '+'):
-            del digits[0]
+        res = 0
+        for c in s:
+            if not c.isdigit():
+                break
+            res = 10 * res + int(c)
 
-        ret, i = 0, 0
-        while i < len(digits) and digits[i].isdigit():
-            ret = ret * 10 + int(digits[i])
-            i += 1
-
-        return max(-2 ** 31, min(sign * ret, 2 ** 31 - 1))
+        return max(-2 ** 31, min(2 ** 31 - 1, sign * res))
 
 # [REQUIREMENT]
 # If the integer is out of the 32-bit signed integer range[-231, 231 - 1], 
