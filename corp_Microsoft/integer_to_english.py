@@ -1,5 +1,6 @@
 class Solution:
     def __init__(self):
+        # NOTE the first item is left as an empty string
         self.less_than_20 = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
                              'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
 
@@ -7,7 +8,6 @@ class Solution:
                      'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
 
         self.thousands = ['', 'Thousand', 'Million', 'Billion']
-    # ------------------------------------------------------------------------------------------------------------------------------------
 
     def numberToWords(self, num):
         if num == 0:
@@ -38,4 +38,4 @@ class Solution:
         else:
             return self.less_than_20[num // 100] + ' Hundred ' + self._helper(num % 100)
 
-# [KEY] Take care each intervals | 0 | 0 < x < 20 | 20 =< x < 100 | 100 < x <= 1000 | x > 1000 
+# [KEY][RECURSION] Take care each intervals | 0 | 0 < x < 20 | 20 =< x < 100 | 100 < x <= 1000 | x > 1000
