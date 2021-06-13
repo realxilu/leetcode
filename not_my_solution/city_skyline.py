@@ -33,3 +33,4 @@ class Solution(object):
         return res[1:]
 
 # [KEY][PRIORITY_QUEUE][HEAP]
+# imagine of a vertical line scanning from left to right. we then use a heap to track the max height and ending position associtated with that max
