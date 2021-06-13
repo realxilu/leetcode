@@ -1,27 +1,35 @@
 from heapq import heappush, heappop
-
-
 class Solution(object):
     def getSkyline(self, buildings):
-        # add start-building events
-        # also add end-building events(acts as buildings with 0 height)
-        # and sort the events in left -> right order
-        events = [(L, -H, R) for L, R, H in buildings]
-        events += list({(R, 0, 0) for _, R, _ in buildings})
+        start_events = [(L, -H, R) for L, R, H in buildings]
+        # note ending points' heights are all zero by definition
+        end_events = [(R, 0, R) for _, R, _ in buildings]
+        # [PYTHON] sort by tuple
+        events = start_events + end_events
         events.sort()
 
-        # res: result, [x, height]
-        # live: heap, [-height, ending position]
-        res = [[0, 0]]
-        live = [(0, float("inf"))]
-        for pos, negH, R in events:
-            # 1, pop buildings that are already ended
-            # 2, if it's the start-building event, make the building alive
-            # 3, if previous keypoint height != current highest height, edit the result
-            while live[0][1] <= pos:
-                heappop(live)
-            if negH:
-                heappush(live, (negH, R))
-            if res[-1][1] != -live[0][0]:
-                res += [[pos, -live[0][0]]]
+        # NOTE both 'res' and 'heap' are dummy entries (much like sentinel nodes in linked list)
+        # The reason for heap position of 0, hegiht with infinity x is that it will never be deqeued
+        # the above manipulation is needed because heap[0] didn't exisit at the beginning and still need to be consumed in line 24
+        # res: [start_coordinate, height]
+        res = [(0, 0)]
+        # heap:[height, ending position]
+        heap = [(0, float('inf'))]
+
+        # note cur_pos can either be a starting point or an ending point, cur_finish can only be an ending point
+        for cur_pos, cur_height, cur_finish in events:
+            # pop buildings that are already ended
+            while cur_pos >= (heap[0])[1]:  # heap[0][1]=max heap's ending position
+                heappop(heap)
+            # start events' heights aren't zero
+            if cur_height:
+                heappush(heap, (cur_height, cur_finish))
+            # add current height to res only when it is different than the previous height
+            # res[-1] denotes the last element in a list
+            if res[-1][1] != -(heap[0])[0]:
+                # NOTE the negative sign here, we are using an inverted min heap, thus the negative
+                res += [(cur_pos, -(heap[0])[0])]
+
         return res[1:]
+
+# [KEY][PRIORITY_QUEUE][HEAP]
