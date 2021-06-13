@@ -23,7 +23,7 @@ class Solution:
 
         return words.strip()
 
-    # [KEY][RECURSION]
+    # [RECURSION]
     def _helper(self, num):
         if num == 0:
             return ''
