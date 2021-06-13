@@ -18,7 +18,7 @@ class Solution(object):
 
         # note cur_pos can either be a starting point or an ending point, cur_finish can only be an ending point
         for cur_pos, cur_height, cur_finish in events:
-            # pop buildings that are already ended
+            # if the cur vertical line is touch or on the right side of heap max's ending, we remove the item from our heap
             while cur_pos >= (heap[0])[1]:  # heap[0][1]=max heap's ending position
                 heappop(heap)
             # start events' heights aren't zero
