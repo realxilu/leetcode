@@ -25,13 +25,17 @@ class Solution:
 
     # [RECURSION]
     def _helper(self, num):
+        # [IMPORTANT] handle '0' differently
         if num == 0:
             return ''
+        # (0, 20)
         elif num < 20:
             return self.less_than_20[num] + ' '
+        # [20, 100)
         elif num < 100:
             return self.tens[num // 10] + ' ' + self._helper(num % 10)
+        # [100, 1000)
         else:
             return self.less_than_20[num // 100] + ' Hundred ' + self._helper(num % 100)
 
-# [KEY] Take care each intervals | x > 1000 | 100 < x < 1000 | 20 < x < 100 | 0 < x < 20 |
+# [KEY] Take care each intervals | 0 | 0 < x < 20 | 20 =< x < 100 | 100 < x <= 1000 | x > 1000 
