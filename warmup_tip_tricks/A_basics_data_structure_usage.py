@@ -52,6 +52,7 @@ for k, v in dic.items():
     print(k + ' -> ' + v)
 
 # defaultdict with type 'list', it can be any class such as TreeNode
+import collections
 collections.defaultdict(list)
 
 #------------------------------------------------------------------------
@@ -59,8 +60,10 @@ collections.defaultdict(list)
 l1 = list(map(lambda x: int(x), l1))
 
 #------------------------------------------------------------------------
-
-
+# MAP
+vals = [1,2,3]
+' '.join(map(str, vals))
+# above will produce '1 2 3'
 
 
 
