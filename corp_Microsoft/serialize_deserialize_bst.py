@@ -7,6 +7,7 @@ class TreeNode:
         self.right = None
 
 class Codec:
+    # turn data into string
     def serialize(self, root):
         vals = []
 
@@ -23,6 +24,7 @@ class Codec:
         return ' '.join(map(str, vals))
 
     # O( N ) since each val run build once
+    # decode string to data
     def deserialize(self, data):
         vals = collections.deque(int(val) for val in data.split())
 
@@ -37,3 +39,6 @@ class Codec:
                 return node
 
         return build(float('-infinity'), float('infinity'))
+
+
+# related:
