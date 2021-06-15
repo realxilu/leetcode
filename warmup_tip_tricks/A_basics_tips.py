@@ -29,7 +29,7 @@ print(a + ' ' + b)
 # LIST COMPREHENSION 1d
 ['Onibaba' for _ in range(10)]
 
-# LIST COMPREHENSION 2d
+# LIST COMPREHENSION 2d | generate 2d array | 2d array | create 2d array
 mat = [[0 for _ in range(3)] for _ in range(3)]
 print(mat)
 mat[0][0] = 167
