@@ -8,3 +8,10 @@ class Solution:
                 dp[cur_amt] += dp[cur_amt - coin]
 
         return dp[amount]
+
+# [KEY] [DP]
+# [WANT] number of combinations
+# You are given an integer array coins representing coins of different denominations 
+# and an integer amount representing a total amount of money.
+# Return the number of combinations that make up that amount. 
+# If that amount of money cannot be made up by any combination of the coins, return 0.
