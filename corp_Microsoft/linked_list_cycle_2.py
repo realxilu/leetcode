@@ -8,6 +8,7 @@ class Solution:
                 break
         else:
             return None
+        
         while head != slow:
             slow = slow.next
             head = head.next
