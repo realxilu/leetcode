@@ -9,11 +9,11 @@ class Solution:
     # [KEY] easier to visualize the problem by diagraming a tree, then it addresses the question why use backtrack
     # [KEY] utilize the template for backtracking problems
     def backtrack(self, nums, target, index, tmp_list, res):
-        # exit condition I:
+        # exit condition I -- invalid:
         if target < 0:
             return  # just backtrack here
 
-        # exit condition II:
+        # exit condition II -- harvest result:
         if target == 0:
             res.append(tmp_list)
             return  # add to res set then backtrack

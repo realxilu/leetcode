@@ -12,3 +12,5 @@ class Solution:
                 return -1
 
         return 0
+
+# v1 = versions1[i] if i < len(versions1) else 0 is beautiful

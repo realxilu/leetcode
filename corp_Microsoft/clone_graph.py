@@ -26,6 +26,9 @@ class Solution:
                     if nb not in s:
                         q.append(nb)
                     # associate nodes
+                    # dic[node] => mapped node
+                    # dic[nb] => mapped neighbor
+                    # append mapped neighbor into the mapped node's neighbor
                     dic[node].neighbors.append(dic[nb])
 
         return dic[root]
