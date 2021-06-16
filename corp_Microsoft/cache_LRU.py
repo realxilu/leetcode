@@ -9,9 +9,9 @@ class LRUCache:
         self.capacity = capacity
         self.dic = {}
         
-        self.head = Node(-1, -1)  # senitenial
-        self.tail = Node(-1, -1)  # senitenial
-        # setup head and tail's relationshiop
+        self.head = Node(-1, -1)  # head dummy
+        self.tail = Node(-1, -1)  # tail dummy
+        # link head and tail
         self.head.next = self.tail
         self.tail.prev = self.head
 

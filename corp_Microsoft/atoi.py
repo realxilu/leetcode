@@ -17,7 +17,8 @@ class Solution:
         return max(-2 ** 31, min(2 ** 31 - 1, sign * res))
 
 # [REQUIREMENT]
-# If the integer is out of the 32-bit signed integer range[-231, 231 - 1], 
-# then clamp the integer so that it remains in the range. 
-# Specifically, integers less than - 231 should be clamped to - 231, 
-# and integers greater than 231 - 1 should be clamped to 231 - 1
+# If the integer is out of the 32-bit signed integer range [-2**31, 2**31 - 1], 
+# then clamp the integer so that it remains in the range.
+
+# Specifically, integers less than - 2**31 should be clamped to - 2**31, 
+# and integers greater than 2**31 - 1 should be clamped to 2**31 - 1
