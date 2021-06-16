@@ -28,23 +28,21 @@ class LRUCache:
         return -1 # if not found
 
     def put(self, k, v):
-        # remove-add is what guarentees LRU property
+        # remove-add paradigm is what guarentees LRU property
         if k in self.dic:
             self._remove(self.dic[k])
 
-        # add first then think about eviciting
         new_node = Node(k, v)
         self._add(new_node)
         self.dic[k] = new_node
 
-        # evict if over capacity
+        # if over capacity, remove head since we insert from behind
         if len(self.dic) > self.capacity:
-            # evict items from the head, insert from behind
             head_next = self.head.next
             self._remove(head_next)
             del self.dic[head_next.k]
 
-    # node passed in as a reference for both helper function 
+    # pass in reference for a node and remove it from the linkedlist 
     def _remove(self, node):
         _prev = node.prev
         _next = node.next
