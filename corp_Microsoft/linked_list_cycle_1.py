@@ -1,22 +1,18 @@
 class Solution:
-    def has_cycle(self, head):
-        if head is None:
-            return False
-
+    def hasCycle(self, head: ListNode) -> bool:
         slow = fast = head
 
         while True:
-            if fast.next is None or fast.next.next is None:
-                break
+            if not fast or not fast.next:
+                return False
 
             slow = slow.next
             fast = fast.next.next
 
-            if slow == fast:
+            if slow is fast:
                 return True
 
         return False
-
 
 class ListNode:
     def __init__(self, x):
