@@ -21,5 +21,4 @@ class Solution:
                         q.append((next_word, level + 1))
 
         return 0
-
-# [BFS]
+#[KEY][BFS]
