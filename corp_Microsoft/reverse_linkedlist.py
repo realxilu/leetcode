@@ -1,9 +1,12 @@
 class Solution:
     # recursive
+    # the key to any recursive approach is to assume that the solution
+    # had _already_ been created
     def reverse_list(self, head):
-        if head is None or head.next is None:
+        if not head or not head.next:
             return head
 
+        # according to the contract, the rec func is supposed to return a new head
         new_head = self.reverse_list(head.next)
         head.next.next = head
         head.next = None
@@ -15,10 +18,10 @@ class Solution:
         prev, cur = None, head
 
         while cur:
-            next_ = cur.next
+            _next = cur.next
             cur.next = prev
             prev = cur
-            cur = next_
+            cur = _next
 
         return prev
 
