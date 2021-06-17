@@ -5,6 +5,6 @@ class Solution:
         if A == B and len(set(A)) < len(A):
             return True
 
-        dif = [(a, b) for a, b in zip(A, B) if a != b]
+        diff = [(a, b) for a, b in zip(A, B) if a != b]
 
-        return len(dif) == 2 and dif[0][::-1] == dif[1]
+        return len(diff) == 2 and diff[0][::-1] == diff[1]
