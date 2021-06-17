@@ -10,7 +10,8 @@ class Solution:
 
         return False
 
-    # check whether can find word, start at (i,j) position
+    # indices i, j are useful helper params for graph problems
+    # start the exploration at position (i, j)
     def dfs(self, board, i, j, word):
         # all the characters are checked
         if len(word) == 0:
@@ -22,16 +23,19 @@ class Solution:
             return False
 
         # first character is found, check the remaining part
-        recorded_val = board[i][j]
-        # avoid visit agian
-        board[i][j] = "#"
+        saved_val = board[i][j]
+        # mark as visisted
+        board[i][j] = '#'
+        
         # check whether can find "word" along one direction
         res = self.dfs(board, i + 1, j, word[1:]) or \
               self.dfs(board, i - 1, j, word[1:]) or \
               self.dfs(board, i, j + 1, word[1:]) or \
               self.dfs(board, i, j - 1, word[1:])
-        board[i][j] = recorded_val
+        
+        # don't forget to recover the position
+        board[i][j] = saved_val
 
         return res
 
-# [KEY] 1) apply dfs on each cell
+# [KEY][BACKTRACK] 1) run dfs on every cell

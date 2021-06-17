@@ -10,11 +10,16 @@ class Solution:
             if cur_word == end_word:
                 return level
 
+            # examine each word and replace the ith word with either of the 26 chars and check if the new word is in the set
             for i in range(len(cur_word)):
                 for c in alpha:
+                    # [:i] can't reach 'i', c is at ith position, cur_word goes from i + 1 to the end
                     next_word = cur_word[:i] + c + cur_word[i + 1:]
+                    # this method is cool, cuz the next_word might not 
                     if next_word in word_set:
                         word_set.remove(next_word)  # mark as visited
                         q.append((next_word, level + 1))
 
         return 0
+
+# [BFS]
