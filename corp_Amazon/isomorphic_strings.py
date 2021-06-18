@@ -7,14 +7,12 @@ class Solution:
         for x, y in zip(s, t):
             if x not in dic1:
                 dic1[x] = y
-            else:
-                if dic1[x] != y:
-                    return False
+            elif dic1[x] != y:
+                return False
 
             if y not in dic2:
                 dic2[y] = x
-            else:
-                if dic2[y] != x:
-                    return False
+            elif dic2[y] != x:
+                return False
 
         return True

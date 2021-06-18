@@ -5,17 +5,15 @@ class Solution:
         if len(l1) != len(l2):
             return False
 
-        for pat, word in l1, l2:
+        for pat, word in zip(l1, l2):
             if pat not in dic:
                 dic[pat] = word
-            else:
-                if dic[pat] != word:
-                    return False
+            elif dic[pat] != word:
+                return False
 
             if word not in rev_dic:
                 rev_dic[word] = pat
-            else:
-                if rev_dic[word] != pat:
-                    return False
+            elif rev_dic[word] != pat:
+                return False
 
         return True
