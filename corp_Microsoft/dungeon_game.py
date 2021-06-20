@@ -16,8 +16,9 @@ class Solution:
 
         return dp[0][0]
 
-# [KEY] dp[i][j] = minimal HP needed at grid (i, j)
+# [KEY][DP]
+# dp[i][j] = minimal HP needed at grid (i, j)
 # 1) Go from bottom right back to the origin
-# 2) In order to survive, the knight needs to have at least 1 HP at the end
-# 3) require extra space to hold dp
+# 2) To survive, the knight needs to have _at least_ 1 HP at the destination
+# 3) require 1 extra space to hold dp
 
