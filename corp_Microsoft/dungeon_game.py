@@ -21,4 +21,3 @@ class Solution:
 # 1) Go from bottom right back to the origin
 # 2) To survive, the knight needs to have _at least_ 1 HP at the destination
 # 3) require 1 extra space to hold dp
-
