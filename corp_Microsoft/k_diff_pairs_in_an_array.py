@@ -11,3 +11,4 @@ class Solution:
         return res
 
 # if k == 0, the diff is 0 only when there are duplicates such that dic[key] > 1
+# [KEY][DIC]
