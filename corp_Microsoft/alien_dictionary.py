@@ -1,35 +1,37 @@
+from collections import defaultdict, Counter, deque
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
-        # Put all unique letters into the adj list.
-        reverse_adj_list = {c : [] for word in words for c in word}
+        # create data structures + the in_degree of each unique letter to 0
+        adj_list = defaultdict(set)
+        in_degree = Counter({c: 0 for word in words for c in word})
 
-        # Find all edges and put them in reverse_adj_list.
+        # We need to populate adj_list and in_degree
+        # For each pair of adjacent words
         for first_word, second_word in zip(words, words[1:]):
             for c, d in zip(first_word, second_word):
-                if c != d: 
-                    reverse_adj_list[d].append(c)
+                if c != d:
+                    if d not in adj_list[c]:
+                        adj_list[c].add(d)
+                        in_degree[d] += 1
                     break
-            else: # Check that second word isn't a prefix of first word.
-                if len(second_word) < len(first_word): 
+            else:  # Check that second word isn't a prefix of first word
+                if len(second_word) < len(first_word):
                     return ''
 
-        # dfs
-        seen = {} # False = grey, True = black.
+        # We need to repeatedly pick off nodes with an indegree of 0
         output = []
-        def visit(node):  # Return True iff there are no cycles.
-            if node in seen:
-                return seen[node] # If this node was grey (False), a cycle was detected.
-            seen[node] = False # Mark node as grey.
-            for next_node in reverse_adj_list[node]:
-                result = visit(next_node)
-                if not result: 
-                    return False # Cycle was detected lower down.
-            seen[node] = True # Mark node as black.
-            output.append(node)
-            
-            return True
+        q = deque([c for c in in_degree if in_degree[c] == 0])
+        while q:
+            c = q.popleft()
+            output.append(c)
+            for d in adj_list[c]:
+                in_degree[d] -= 1
+                if in_degree[d] == 0:
+                    q.append(d)
 
-        if not all(visit(node) for node in reverse_adj_list):
+        # If not all letters are in output, that means there was a cycle and so
+        # no valid ordering. Return '' as per the problem description
+        if len(output) < len(in_degree):
             return ''
-
-        return ''.join(output) 
+        # Otherwise, convert the ordering we found into a string and return it
+        return ''.join(output)
