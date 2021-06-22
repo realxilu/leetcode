@@ -1,9 +1,9 @@
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
-        # Step 0: Put all unique letters into the adj list.
+        # Put all unique letters into the adj list.
         reverse_adj_list = {c : [] for word in words for c in word}
 
-        # Step 1: Find all edges and put them in reverse_adj_list.
+        # Find all edges and put them in reverse_adj_list.
         for first_word, second_word in zip(words, words[1:]):
             for c, d in zip(first_word, second_word):
                 if c != d: 
@@ -13,7 +13,7 @@ class Solution:
                 if len(second_word) < len(first_word): 
                     return ''
 
-        # Step 2: dfs
+        # dfs
         seen = {} # False = grey, True = black.
         output = []
         def visit(node):  # Return True iff there are no cycles.
@@ -26,6 +26,7 @@ class Solution:
                     return False # Cycle was detected lower down.
             seen[node] = True # Mark node as black.
             output.append(node)
+            
             return True
 
         if not all(visit(node) for node in reverse_adj_list):
