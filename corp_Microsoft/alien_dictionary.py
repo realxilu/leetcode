@@ -6,7 +6,7 @@ class Solution:
         in_degree = Counter({c: 0 for word in words for c in word})
 
         # We need to populate adj_list and in_degree
-        # For each pair of adjacent words
+        # watch how to process first and second word
         for first_word, second_word in zip(words, words[1:]):
             for c, d in zip(first_word, second_word):
                 if c != d:
@@ -19,19 +19,31 @@ class Solution:
                     return ''
 
         # We need to repeatedly pick off nodes with an indegree of 0
-        output = []
+        source = []
         q = deque([c for c in in_degree if in_degree[c] == 0])
+        # BFS structure
         while q:
             c = q.popleft()
-            output.append(c)
+            source.append(c)
+            # check the neighbors
             for d in adj_list[c]:
+                # deduct indegrees of c's neighbors
                 in_degree[d] -= 1
                 if in_degree[d] == 0:
                     q.append(d)
 
-        # If not all letters are in output, that means there was a cycle and so
+        # If not all letters are in source, that means there was a cycle and so
         # no valid ordering. Return '' as per the problem description
-        if len(output) < len(in_degree):
+        if len(source) < len(in_degree):
             return ''
         # Otherwise, convert the ordering we found into a string and return it
-        return ''.join(output)
+        return ''.join(source)
+
+# for...else loop
+
+# bfs structure
+# while q:
+#     node = q.popleft()
+#     print(node)
+#     for nb in node.neighbors
+#         q.append(nb)
