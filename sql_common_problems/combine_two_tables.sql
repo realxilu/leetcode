@@ -29,3 +29,8 @@ SELECT Person.FirstName,
 	   Address.State
 FROM Person LEFT JOIN Address
 ON Person.PersonId = Address.PersonId;
+
+-- v2
+select p.FirstName, p.LastName, a.City, a.State from Person p left outer join Address a on p.PersonId = a.PersonId
+
+-- [KEY] use left outer join since 'regardless if there is an address for each of those people'

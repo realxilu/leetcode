@@ -14,13 +14,25 @@
 -- | 200                 |
 -- +---------------------+
 
+-- NOTE the alias must be "SecondHighestSalary" 
+-- v1
 SELECT MAX(Salary)
 FROM Employee
 WHERE Salary < (SELECT MAX(Salary) FROM Employee);
 
--- my version
+-- v2
 select MAX(Salary) AS "SecondHighestSalary" 
 FROM Employee 
 WHERE Salary != (SELECT MAX(Salary) FROM Employee);
 
--- [KEY] nested sql statement
+-- v3 use limit
+SELECT
+    (SELECT DISTINCT
+            Salary
+        FROM
+            Employee
+        ORDER BY Salary DESC
+        LIMIT 1, 1) AS SecondHighestSalary
+;
+
+-- [KEY] nested sql statement - we can select from another select statement

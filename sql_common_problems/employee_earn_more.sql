@@ -26,3 +26,9 @@ WHERE
     a.ManagerId = b.Id
 AND 
     a.Salary > b.Salary;
+
+-- v2
+select a.Name as 'Employee' from Employee a, Employee b
+where a.Salary > b.Salary and a.ManagerId = b.Id
+
+-- [KEY] we can select the same table twice and use them for different purposes
