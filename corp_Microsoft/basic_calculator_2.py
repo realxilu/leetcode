@@ -24,11 +24,14 @@ class Solution:
                     top = stack.pop()
                     # top // tmp will floor the number which is problematic for negative divisions
                     if top // tmp < 0 and top % tmp != 0:
-                        # if the divison is negative and not a whole division, to need to move the number to the right by 1 unit
+                        # if the divison is negative and has a remainder (ie -1.125), then move the number to the right by 1 unit (-1)
                         stack.append(top // tmp + 1)
                     else:
                         stack.append(top // tmp)
-
+                # reset sign and tmp
                 sign, tmp = c, 0
 
         return sum(stack)
+
+# [KEY] when we hit the current sign, we do calculation based on the previous sign
+# 1 + 3 - 4 +5: when we hit '-', we are then doing calculation for '1 + 3' and the sign we are looking at is '+' 
