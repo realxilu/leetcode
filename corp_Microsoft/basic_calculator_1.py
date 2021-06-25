@@ -43,3 +43,4 @@ class Solution:
  # whenever an operator is hit, it means a number must have been formed.
  # res += sign * num is for the prevoius operation
  # what is the previous operation when the first '+' was hit, it is res = 0 (init) + 1
+ # NOTE this is different from calculator 2, we don't dump everything into stack, the central idea is to construct an accumulator

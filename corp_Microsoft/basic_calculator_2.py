@@ -35,3 +35,4 @@ class Solution:
 
 # [KEY] when we hit the current sign, we do calculation based on the previous sign
 # 1 + 3 - 4 +5: when we hit '-', we are then doing calculation for '1 + 3' and the sign we are looking at is '+' 
+# In the end we have [1, 3, -4, 5] in the stack and then sum them all up and return
