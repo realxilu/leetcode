@@ -24,6 +24,7 @@ class Solution:
                     top = stack.pop()
                     # top // tmp will floor the number which is problematic for negative divisions
                     if top // tmp < 0 and top % tmp != 0:
+                        # if the divison is negative and not a whole division, to need to move the number to the right by 1 unit
                         stack.append(top // tmp + 1)
                     else:
                         stack.append(top // tmp)
