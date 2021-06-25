@@ -3,6 +3,7 @@ class Solution:
         if not s:
             return 0
 
+        # [TRICK] add a '+' at the end
         s = s.strip() + '+'
         stack, sign, tmp = [], '+', 0
 
@@ -21,6 +22,7 @@ class Solution:
                     stack.append(stack.pop() * tmp)
                 if sign == '/':
                     top = stack.pop()
+                    # top // tmp will floor the number which is problematic for negative divisions
                     if top // tmp < 0 and top % tmp != 0:
                         stack.append(top // tmp + 1)
                     else:
