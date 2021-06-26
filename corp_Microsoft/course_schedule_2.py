@@ -28,7 +28,6 @@ class Solution(object):
 
         return res if len(res) == numCourses else []
 
-
 # For example, the pair [x, y], indicates that to take course x you have to first take course y.
 # That means y -> x. Be careful about ordering when building the ajacency list
-# Note that the in_degree container is just the reverse since we care about incoming arrows
+# Note that the in-degree container is just the reverse, because we are counting incoming arrows to a node.
