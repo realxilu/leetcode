@@ -1,4 +1,4 @@
-# Given an originally sorted array and find number of rotations that has een performed on the array
+# [NOT_LEETCODE]Given an originally sorted array and find number of rotations that has een performed on the array
 # num = [1 2 3 4 5] after 1 rotation [2 3 4 5 1]
 
 def count_shift(nums):

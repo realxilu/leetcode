@@ -27,18 +27,17 @@ class Solution:
                         q.append(nb)
                     # associate nodes
                     # dic[node] => mapped node
-                    # dic[nb] => mapped neighbor
-                    # append mapped neighbor into the mapped node's neighbor
+                    # dic[nb]   => mapped neighbor
+                    # append mapped neighbor into the mapped current node's neighbor container
                     dic[node].neighbors.append(dic[nb])
 
         return dic[root]
-
 
 class Node:
     def __init__(self, val, neighbors):
         self.val = val
         self.neighbors = neighbors  # list
 
-# [KEY] bfs traversal + hashmap
+# [KEY] bfs + hashmap
 # 1st pass created mapped nodes
 # 2nd pass establish relationships between the old and new
