@@ -13,15 +13,14 @@ class Solution(object):
             in_degree[x].add(y)
 
         # If the current node doesn't have any in_degree, then it is a sources. They don't depend on anyone now. Add them to the sources list.
-        res, sources = [], [s for s in range(
-            numCourses) if len(in_degree[s]) == 0]
+        res, sources = [], [s for s in range(numCourses) if len(in_degree[s]) == 0]
         while sources:  # sources contains courses without prerequisites
             new_sources = []
-            for s in sources:
-                res.append(s)
+            for src in sources:
+                res.append(src)
                 # visit all the neighbors of the sources, since we removed the sources, we deduct the in_degree of the neightbors
-                for i in graph[s]:
-                    in_degree[i].remove(s)
+                for i in graph[src]:
+                    in_degree[i].remove(src)
                     # if the in_degree of the current node becoms zero, add it to the new sources
                     if len(in_degree[i]) == 0:
                         new_sources.append(i)
