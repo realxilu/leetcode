@@ -19,11 +19,11 @@ class Solution(object):
             for src in sources:
                 res.append(src)
                 # visit all the neighbors of the sources, since we removed the sources, we deduct the in_degree of the neightbors
-                for i in graph[src]:
-                    in_degree[i].remove(src)
+                for nbr in graph[src]:
+                    in_degree[nbr].remove(src)
                     # if the in_degree of the current node becoms zero, add it to the new sources
-                    if len(in_degree[i]) == 0:
-                        new_sources.append(i)
+                    if len(in_degree[nbr]) == 0:
+                        new_sources.append(nbr)
             sources = new_sources  # new_sources contains new courses with no prerequisites
 
         return res if len(res) == numCourses else []
