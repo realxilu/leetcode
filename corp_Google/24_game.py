@@ -22,15 +22,19 @@ class Solution(object):
         return False
 
 def add(a, b):
-    return a+b
+    return a + b
+
 def sub(a, b):
-    return a-b
+    return a - b
+
 def mul(a, b):
-    return a*b
+    return a * b
+
 def div(a, b):
     if b == 0:
         return 0 # this is accpetable since 0 would yield wrong answer anyways
-    return a /float(b)
+    
+    return a / float(b)
 
 # [KEY] itertool
 # Learn backtracking method to handle pesky interviewers
