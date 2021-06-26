@@ -32,7 +32,7 @@ class Solution(object):
             trie.insert(w)
         for i in range(len(board)):
             for j in range(len(board[0])):
-                self.dfs(board, node, i, j, "", res)
+                self.dfs(board, node, i, j, '', res)
         return res
 
     def dfs(self, board, node, i, j, path, res):
@@ -45,7 +45,7 @@ class Solution(object):
         node = node.children.get(tmp)
         if not node:
             return
-        board[i][j] = "#"
+        board[i][j] = '#'
         self.dfs(board, node, i+1, j, path+tmp, res)
         self.dfs(board, node, i-1, j, path+tmp, res)
         self.dfs(board, node, i, j-1, path+tmp, res)

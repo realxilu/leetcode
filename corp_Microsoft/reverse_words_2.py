@@ -1,8 +1,5 @@
 class Solution:
     def reverseWords(self, s: List[str]) -> None:
-        """
-        Do not return anything, modify s in-place instead.
-        """
         self.reverse(s, 0, len(s) - 1)
 
         start = 0
