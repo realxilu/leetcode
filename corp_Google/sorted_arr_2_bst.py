@@ -5,14 +5,14 @@ class Solution:
 
         return self.sortedArray2Bst(num, 0, len(num) - 1)
 
-    def sortedArray2Bst(self, num, low, hi):
-        if low > hi:
+    def sortedArray2Bst(self, num, lo, hi):
+        if lo > hi:
             return None
 
-        mid = (low + hi) // 2
+        mid = (lo + hi) // 2
         root = TreeNode(num[mid])
 
-        root.left = self.sortedArray2Bst(num, low, mid - 1)
+        root.left = self.sortedArray2Bst(num, lo, mid - 1)
         root.right = self.sortedArray2Bst(num, mid + 1, hi)
 
         return root
