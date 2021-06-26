@@ -2,7 +2,8 @@ import itertools
 
 class Solution(object):
     def judgePoint24(self, nums):
-        Ops = list(itertools.product([add, sub, mul, div], repeat=3))
+        Ops = list(itertools.product([add, sub, mul, div], repeat = 3))
+        
         for num in set(itertools.permutations(nums)):
             for op in Ops:
                 # (Z op (Y op (W op X)))
