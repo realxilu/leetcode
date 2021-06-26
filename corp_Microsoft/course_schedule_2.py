@@ -4,7 +4,7 @@ class Solution(object):
     def findOrder(self, numCourses, prerequisites):
         # ajacency list
         graph = [[] for _ in range(numCourses)]
-        # in_degree container
+        # in-degree container
         in_degree = [set() for _ in range(numCourses)]
 
         # build graph and in-degree container
