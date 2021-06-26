@@ -11,12 +11,12 @@ class Solution:
     def backtrack(self, nums, target, index, tmp_list, res):
         # exit condition I -- invalid:
         if target < 0:
-            return  # just backtrack here
+            return # just backtrack here
 
         # exit condition II -- harvest result:
         if target == 0:
             res.append(tmp_list)
-            return  # add to res set then backtrack
+            return # add to res set then backtrack
 
         # [PYTHON] 'i' is moving in range(start, stop)
         for i in range(index, len(nums)):
