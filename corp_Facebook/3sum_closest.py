@@ -10,6 +10,7 @@ class Solution:
                 if cur_sum == target:
                     return cur_sum
 
+                # compare the distance between current sum and known min value so far
                 if abs(cur_sum - target) < abs(_min - target):
                     _min = cur_sum
 
