@@ -1,7 +1,7 @@
 class Solution:
     def threeSumClosest(self, num, target):
         num.sort()
-        _min = num[0] + num[1] + num[2]
+        _min = float('inf')
 
         for i in range(len(num) - 2):
             j, k = i + 1, len(num) - 1
