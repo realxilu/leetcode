@@ -14,5 +14,5 @@ class Solution(object):
         if carry:
             res.append(carry)
 
-        # 'join' only works for strings arrays
+        # 'join' only works for strings in arrays, 'i' needs to be converted to string first before joining
         return ''.join([str(i) for i in res])[::-1]
