@@ -24,7 +24,7 @@ class Solution:
 
         return res
 
-# [KEY][BFS][LEVEL-ORDER-TRAVERSAL]
+# [KEY][BFS][LEVEL-ORDER-TRAVERSAL] Essentially this is just a level order traversal problem
 # The idea is to print out the last element of the level which by definition is the right side view
 
 class TreeNode:
