@@ -5,8 +5,7 @@ class Solution:
         adj_list = defaultdict(set)
         in_degree = Counter({c: 0 for word in words for c in word})
 
-        # populate adj_list and in_degree
-        # watch how to process first and second word
+        # build graph and indegree
         for word1, word2 in zip(words, words[1:]):
             for char1, char2 in zip(word1, word2):
                 if char1 != char2:
@@ -19,11 +18,9 @@ class Solution:
                 if len(word2) < len(word1):
                     return ''
 
-        # repeatedly pick off nodes with indegrees of 0
-        source = []
-        # source init: for nodes whose indegrees are zero
-        q = deque([c for c in in_degree if in_degree[c] == 0])
-        # bfs
+        # core idea: repeatedly pick off nodes with indegrees of 0
+        # [bfs] source init: for nodes whose indegrees are zero
+        source, q = [], deque([c for c in in_degree if in_degree[c] == 0])
         while q:
             c = q.popleft()
             source.append(c)
@@ -34,7 +31,7 @@ class Solution:
                 if in_degree[d] == 0:
                     q.append(d)
 
-        # if not all letters are in source, that means there was a cycle
+        # if not all letters are in source, that means there was a cycle (not DAG)
         # therefore there is no valid toposort. Return '' as required
         if len(source) < len(in_degree):
             return ''
