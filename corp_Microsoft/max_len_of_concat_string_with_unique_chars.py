@@ -16,6 +16,6 @@ class Solution:
                 # o.w. we add the union of set memeber 'a' and 'c'
                 dp.append(a | c)
 
-        return max(len(a) for a in dp)
+        return max(len(x) for x in dp)
 
 # [KEY] set operations can be really really convenient sometimes
