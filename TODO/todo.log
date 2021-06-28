@@ -1,6 +1,8 @@
 - medians of two sorted array
 - lfu
-- sodoku
+- sodoku solver
 - leetcode regex problem
 - word search ii
 - reverse k group
+
+- add undocumented leetcode questions that was done in javascript into this repo
