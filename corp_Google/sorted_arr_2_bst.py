@@ -9,7 +9,7 @@ class Solution:
         if lo > hi:
             return None
 
-        mid = (lo + hi) // 2
+        mid = lo + (hi - lo) // 2 # (lo + hi) // 2
         root = TreeNode(num[mid])
 
         root.left = self.sortedArray2Bst(num, lo, mid - 1)
