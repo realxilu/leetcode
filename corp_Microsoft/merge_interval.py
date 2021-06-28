@@ -1,12 +1,12 @@
 class Solution:
     def merge(self, intervals):
-        # [IMPORTANT] sorted by the starting indices
+        # [IMPORTANT] must be sorted!
         intervals = sorted(intervals, key=lambda x: x[0])
 
-        # [innovative] usage of dummy
+        # NOTE pre starts at the first interval
         res, pre = [], intervals[0]
 
-        # note cur point starts at 2nd interval
+        # note cur pointer starts at the 2nd interval
         for cur in intervals[1:]:
             # pre's end is great than or touching the next interval's start
             if pre[1] >= cur[0]:
@@ -15,10 +15,10 @@ class Solution:
                 res.append(pre)
                 pre = cur
 
-        # don't forget the last case
+        # Don't forget to add the last interval
         res.append(pre)
 
         return res
 
-# 0: start
-# 1: end
+# 0 = start
+# 1 = end
