@@ -1,6 +1,6 @@
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        # build a graph
+        # build the graph
         graph = {}
         for src, dst in tickets:
             if src in graph:
@@ -9,12 +9,11 @@ class Solution:
                 graph[src] = [dst]
 
         for src in graph.keys():
-            graph[src].sort(reverse=True)
+            graph[src].sort(reverse = True)
             # Sort children list in descending order so that we can pop last element
             # instead of pop out first element which is costly operation
-        stack = []
-        res = []
-        stack.append("JFK")
+        stack,res = [], []
+        stack.append('JFK')
         # Start with JFK as starting airport and keep adding the next child to traverse
         # for the last airport at the top of the stack. If we reach to an airport from where
         # we can't go further then add it to the result. This airport should be the last to go
