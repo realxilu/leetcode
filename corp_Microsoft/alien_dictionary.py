@@ -5,7 +5,7 @@ class Solution:
         adj_list = defaultdict(set)
         in_degree = Counter({c: 0 for word in words for c in word})
 
-        # We need to populate adj_list and in_degree
+        # populate adj_list and in_degree
         # watch how to process first and second word
         for first_word, second_word in zip(words, words[1:]):
             for c, d in zip(first_word, second_word):
@@ -18,25 +18,26 @@ class Solution:
                 if len(second_word) < len(first_word):
                     return ''
 
-        # We need to repeatedly pick off nodes with an indegree of 0
+        # repeatedly pick off nodes with indegrees of 0
         source = []
+        # source init: for nodes whose indegrees are zero
         q = deque([c for c in in_degree if in_degree[c] == 0])
-        # BFS structure
+        # bfs
         while q:
             c = q.popleft()
             source.append(c)
-            # check the neighbors
+            # check neighbors
             for d in adj_list[c]:
-                # deduct indegrees of c's neighbors
+                # deduct indegrees of current node's neighbors
                 in_degree[d] -= 1
                 if in_degree[d] == 0:
                     q.append(d)
 
-        # If not all letters are in source, that means there was a cycle and so
-        # no valid ordering. Return '' as per the problem description
+        # if not all letters are in source, that means there was a cycle
+        # therefore there is no valid toposort. Return '' as required
         if len(source) < len(in_degree):
             return ''
-        # Otherwise, convert the ordering we found into a string and return it
+        # join strings as required
         return ''.join(source)
 
 # for...else loop
