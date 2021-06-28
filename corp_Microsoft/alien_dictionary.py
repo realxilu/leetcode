@@ -7,16 +7,16 @@ class Solution:
 
         # populate adj_list and in_degree
         # watch how to process first and second word
-        for first_word, second_word in zip(words, words[1:]):
-            for c, d in zip(first_word, second_word):
-                if c != d:
-                    if d not in adj_list[c]:
-                        adj_list[c].add(d)
-                        in_degree[d] += 1
+        for word1, word2 in zip(words, words[1:]):
+            for char1, char2 in zip(word1, word2):
+                if char1 != char2:
+                    if char2 not in adj_list[char1]:
+                        adj_list[char1].add(char2)
+                        in_degree[char2] += 1
                     break
             # [PY] for-else loop
             else:  # Check that the second word isn't a prefix of first word
-                if len(second_word) < len(first_word):
+                if len(word2) < len(word1):
                     return ''
 
         # repeatedly pick off nodes with indegrees of 0
