@@ -1,6 +1,5 @@
 # [HEAPQ]
 import heapq
-
 class Solution:
     # cur_interval[0] = start of the interval
     # cur_interval[1] = end of the interval

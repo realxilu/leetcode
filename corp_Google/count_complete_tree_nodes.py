@@ -1,6 +1,5 @@
 from collections import deque
 
-
 class Solution:
     def count_nodes(self, root):
         if root is None:
@@ -17,7 +16,6 @@ class Solution:
                 q.append(node.right)
 
         return count
-
 
 class TreeNode:
     def __init__(self, x):

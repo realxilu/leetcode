@@ -5,4 +5,3 @@ def inorder(root):
     inorder(root.left)
     print(root.val)
     inorder(root.right)
-
