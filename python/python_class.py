@@ -1,4 +1,4 @@
-# TODO: not finished
+# example of py class
 class Person():
     # class variable
     count = 0
