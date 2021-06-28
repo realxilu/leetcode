@@ -13,4 +13,4 @@ class Solution:
 
         return dp[len(s)]
 
-# [KEY][DP] use dynamic programming to memorize the computed position to avoid the same calculation
+# [KEY][DP] use dp to memorize the computed position to avoid the same calculation

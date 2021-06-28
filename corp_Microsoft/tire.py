@@ -3,7 +3,6 @@ class Node:
         self.dic = {}
         self.is_last = False
 
-
 class Trie:
     def __init__(self):
         self.root = Node()
