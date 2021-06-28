@@ -14,8 +14,8 @@ class Solution:
                         adj_list[char1].add(char2)
                         in_degree[char2] += 1
                     break
-            # [PY] for-else loop
-            else:  # Check that the second word isn't a prefix of first word
+            # [PY] for-else
+            else:  # check that the second word isn't a prefix of first word
                 if len(word2) < len(word1):
                     return ''
 
