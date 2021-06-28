@@ -27,7 +27,7 @@ class Solution:
         # mark as visisted
         board[i][j] = '#'
         
-        # check whether can find "word" along one direction
+        # check whether can find 'word' along one direction
         res = self.dfs(board, i + 1, j, word[1:]) or \
               self.dfs(board, i - 1, j, word[1:]) or \
               self.dfs(board, i, j + 1, word[1:]) or \
