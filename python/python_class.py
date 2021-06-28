@@ -1,4 +1,3 @@
-# example of py class
 class Person():
     # class variable
     count = 0
@@ -20,7 +19,6 @@ class Person():
 
     def say_my_name(self):
         print('name is ' + self.name)
-
 
 p1 = Person('Mason')
 p2 = Person('Xi')
