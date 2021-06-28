@@ -14,7 +14,8 @@ class Solution:
                         adj_list[c].add(d)
                         in_degree[d] += 1
                     break
-            else:  # Check that second word isn't a prefix of first word
+            # [PY] for-else loop
+            else:  # Check that the second word isn't a prefix of first word
                 if len(second_word) < len(first_word):
                     return ''
 
@@ -39,12 +40,3 @@ class Solution:
             return ''
         # join strings as required
         return ''.join(source)
-
-# for...else loop
-
-# bfs structure
-# while q:
-#     node = q.popleft()
-#     print(node)
-#     for nb in node.neighbors
-#         q.append(nb)
