@@ -13,4 +13,4 @@ class Solution:
 
         return angle
 
-# math, not much else
+# simple math, not much else
