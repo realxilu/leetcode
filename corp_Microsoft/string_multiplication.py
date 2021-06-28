@@ -5,7 +5,7 @@ class Solution:
         for i, v1 in enumerate(reversed(num1)):
             for j, v2 in enumerate(reversed(num2)):
                 int1, int2 = ord(v1) - ord('0'), ord(v2) - ord('0')
-                # check the image file to understand this part
+                # refer to the image illustration for details
                 res[i + j] += int1 * int2
                 res[i + j + 1] += res[i + j] // 10
                 res[i + j] %= 10
