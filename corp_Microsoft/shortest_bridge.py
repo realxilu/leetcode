@@ -26,5 +26,3 @@
 #                             expand(A, i + 1, j, cl) | | expand(A, i, j + 1, cl))))
 #     return cl - 2
 # }
-
-

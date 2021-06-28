@@ -1,10 +1,8 @@
-# Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
-
 class Codec:
     def serialize(self, root):
         if not root:
@@ -28,7 +26,6 @@ class Codec:
         return node
 
 # Original explanation
-
 class Codec:
     def serialize(self, root):
         # take care of base cases

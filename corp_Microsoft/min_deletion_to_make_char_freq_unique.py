@@ -1,5 +1,4 @@
 import collections
-
 class Solution:
     def minDeletions(self, s: str) -> int:
         dic, res, used = collections.Counter(s), 0, set()

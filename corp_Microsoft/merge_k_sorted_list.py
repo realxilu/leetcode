@@ -1,6 +1,4 @@
 from heapq import *
-
-
 class Solution:
     def merge_k_lists(self, lists):
         heap = [(head.val, i, head) for i, head in enumerate(lists) if head]

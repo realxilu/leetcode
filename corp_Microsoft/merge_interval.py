@@ -1,5 +1,3 @@
-# 0: start
-# 1: end
 class Solution:
     def merge(self, intervals):
         # [IMPORTANT] sorted by the starting indices
@@ -21,3 +19,6 @@ class Solution:
         res.append(pre)
 
         return res
+
+# 0: start
+# 1: end

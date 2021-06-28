@@ -1,4 +1,3 @@
-# m, n are the left and right position instead of values of its element
 class Solution:
     def reverseBetween(self, head: ListNode, m: int, n: int) -> ListNode:
         if not head:
@@ -22,6 +21,8 @@ class Solution:
             then = start.next
 
         return dummy.next
+
+# m, n are the left and right position instead of values of its element
 
 # 1) why use dummy
 # it's always more convinent to introduce dummy
