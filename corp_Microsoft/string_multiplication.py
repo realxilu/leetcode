@@ -10,7 +10,8 @@ class Solution:
                 res[i + j + 1] += res[i + j] // 10
                 res[i + j] %= 10
 
+        # why the length needs to be one
         while len(res) > 1 and res[-1] == 0:
             res.pop()
-
+        
         return ''.join(str(v) for v in res)[::-1]
