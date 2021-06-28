@@ -1,6 +1,4 @@
 from functools import cmp_to_key
-
-
 class Solution:
     def largest_number(self, nums):
         res = [str(x) for x in sorted(nums, key=cmp_to_key(self.comp), reverse=True)]

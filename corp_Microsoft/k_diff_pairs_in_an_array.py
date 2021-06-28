@@ -1,5 +1,4 @@
 import collections
-
 class Solution:
     def findPairs(self, nums, k):
         res = 0

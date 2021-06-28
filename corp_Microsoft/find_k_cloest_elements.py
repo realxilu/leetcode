@@ -11,7 +11,7 @@ class Solution:
 
         return A[i:i + k] # [start index = i, stop index = i + k - 1]
 
-# [KEY] the key is to provide analysis
+# [KEY] the key is to spend time on the analysis, not so much in terms of coding
 # case 1: x - A[mid] < A[mid + k] - x, need to move window go left
 # -------x----A[mid]-----------------A[mid + k]----------
 

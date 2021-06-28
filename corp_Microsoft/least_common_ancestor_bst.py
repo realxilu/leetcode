@@ -10,7 +10,7 @@ class Solution:
             return self.lowestCommonAncestor(root.left, p, q)
 
         return root
-        
+
 class TreeNode:
     def __init__(self, x):
         self.val = x

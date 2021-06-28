@@ -38,4 +38,4 @@ class Solution:
         else:
             return self.less_than_20[num // 100] + ' Hundred ' + self._helper(num % 100)
 
-# [KEY][RECURSION] Take care each intervals | 0 | 0 < x < 20 | 20 =< x < 100 | 100 < x <= 1000 | x > 1000
+# [KEY][RECURSION] Figure out each intervals and handle them differently: 0 | 0 < x < 20 | 20 =< x < 100 | 100 < x <= 1000 | x > 1000

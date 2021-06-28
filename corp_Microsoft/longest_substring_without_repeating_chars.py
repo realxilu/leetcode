@@ -1,6 +1,5 @@
-# [TWO-POINTER]
+# [TWO-POINTER] i = start pointer, j = end pointer
 class Solution:
-    # i = start pointer, j = end pointer
     def lengthOfLongestSubstring(self, s):
         dic = {}
         i = j = 0

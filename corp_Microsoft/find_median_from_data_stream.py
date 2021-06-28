@@ -1,5 +1,4 @@
 from heapq import *
-
 class MedianFinder:
     def __init__(self):
         self.small = []  # max heap (invert min-heap) -> negative numbers
