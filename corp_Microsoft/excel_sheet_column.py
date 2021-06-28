@@ -17,5 +17,5 @@ class Solution:
 # 12 * 10 + 4 = 124
 
 # [PYTHON]
-# ord: convert alphabet to integer
-# chr: convert integer to alphabet
+# ord: convert alphabet to int
+# chr: convert int to alphabet
