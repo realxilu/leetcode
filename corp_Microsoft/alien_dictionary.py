@@ -27,7 +27,7 @@ class Solution:
         while q:
             c = q.popleft()
             source.append(c)
-            # check neighbors
+            # check current node's neighbors
             for d in adj_list[c]:
                 # deduct indegrees of current node's neighbors
                 in_degree[d] -= 1
