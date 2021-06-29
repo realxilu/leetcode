@@ -1,14 +1,15 @@
 class Solution:
     def addTwoNumbers(self, l1, l2):
         cur1, cur2 = l1, l2
-        # [innovative][dummy][elegant] usage of a sentinel node
+        # sentinel node
         cur = dummy = ListNode(-1)
         _sum = 0
 
         while cur1 or cur2:
             # example 14 // 10 = 1 (carry)
-            # example 0  // 10 = 0
-            _sum = _sum // 10
+            # example 7  // 10 = 0
+            # [KEY] this effectively handles the carry-over elegantly
+            _sum //= 10
 
             if cur1:
                 _sum += cur1.val
@@ -29,6 +30,8 @@ class Solution:
 
         return dummy.next
 
+# [KEY] use of dummy node, modulous, integer division
+# use accumulator _sum to stack values in
 
 class ListNode:
     def __init__(self, x):
