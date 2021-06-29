@@ -9,6 +9,7 @@ class Solution:
             # maintain a level variable and the current length
             level, cur_level_len = [], len(q)
 
+            # the key to level order traveral is to record the length of the current level
             for _ in range(cur_level_len):
                 node = q.popleft()
                 if node:

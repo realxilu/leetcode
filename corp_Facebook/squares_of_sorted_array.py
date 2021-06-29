@@ -16,4 +16,4 @@ class Solution:
 
         return res[::-1]
 
-# [BT][TWO_POINTER]
+# [KEY][TWO-POINTER] run two pointers from each end
