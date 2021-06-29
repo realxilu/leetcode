@@ -1,41 +1,35 @@
 class Solution:
     def calculate(self, s):
-        res = 0
-        stack = []
-        sign, num = 1, 0
+        if not s:
+            return None
+
+        s += '+'  # given how the algorithm works, we only do calculation after seeing a sign
+        res, stack, sign, num = 0, [], 1, 0
 
         for c in s:
-            # ignore space
             if (c == ' '):
                 continue
 
             if c.isdigit():
-                # [TRICK] build the number using digits
                 num = 10 * num + int(c)
             elif c == '+':
-                res += sign * num # this is for the previous operation
-                # the reset for the next op
-                num = 0
-                sign = 1
+                res += sign * num  # this is for the previous operation
+                # reset for next op
+                num, sign = 0, 1
             elif c == '-':
                 res += sign * num
-                num = 0
-                sign = -1
+                num, sign = 0, -1
             elif c == '(':
                 # save the current 'res' and 'sign' into stack
                 stack.append(res)
                 stack.append(sign)
-                sign = 1
-                res = 0
+                sign, res = 1, 0
             elif c == ')':
                 # in-paren calculation
                 res += sign * num
                 num = 0
-                res *= stack.pop() # sign
-                res += stack.pop() # res
-
-        # [ATTENTION] handle the last number cuz' there is no sign after the last number
-        res += sign * num
+                res *= stack.pop()  # sign
+                res += stack.pop()  # res
 
         return res
 
