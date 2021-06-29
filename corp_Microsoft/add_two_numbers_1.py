@@ -19,7 +19,7 @@ class Solution:
                 _sum += cur2.val
                 cur2 = cur2.next
 
-            # modulous division
+            # modulous division used to extract the least significant digit
             # example 14 % 10 = 4
             cur.next = ListNode(_sum % 10)
             cur = cur.next
