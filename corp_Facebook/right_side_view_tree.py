@@ -6,10 +6,9 @@ class Solution:
 
         q, res = deque([root]), []
         while q:
-            # maintain a level variable and the current length
             level, cur_level_len = [], len(q)
 
-            # the key to level order traveral is to record the length of the current level
+            # the key to [LEVEL-ORDER-TRAVERSAL] is to record the length of the current level so we won't over-queue
             for _ in range(cur_level_len):
                 node = q.popleft()
                 if node:
@@ -21,13 +20,13 @@ class Solution:
             if level:
                 # record the rightmost element, [PY] '-1' is the index of the last element
                 res.append(level[-1])
-            # reset level for it to be used in the next level
+            # reset level - dump out the currently filled value for use in the next iteration
             level = []
 
         return res
 
-# [KEY][BFS][LEVEL-ORDER-TRAVERSAL] Essentially this is just a level order traversal problem
-# The idea is to print out the last element of the level which by definition is the right side view
+# [KEY][BFS][LEVEL-ORDER-TRAVERSAL] Essentially this is just a level order traversal problem.
+# The idea is to identify the last element (right view) of the level which by definition is the right side view
 # Observation and analysis is important to solving this type of questions. But usually under the stress of interviews, one can hardly come up
 # with an algorithm without any hint. Need to do more lc problems to bypass this problem.
 
