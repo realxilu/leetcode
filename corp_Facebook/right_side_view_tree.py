@@ -13,13 +13,13 @@ class Solution:
             for _ in range(cur_level_len):
                 node = q.popleft()
                 if node:
-                    # record the rightmost element
                     level.append(node.val)
-                    # process bfs neighbors as usual only this is a binary tree
+                    # queue neighbors
                     q.append(node.left)
                     q.append(node.right)
 
             if level:
+                # record the rightmost element, [PY] '-1' is the index of the last element
                 res.append(level[-1])
             # reset level for it to be used in the next level
             level = []
