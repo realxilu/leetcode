@@ -6,9 +6,9 @@ class Solution:
         _sum = 0
 
         while cur1 or cur2:
+            # [TRICK] this effectively handles the carry-over elegantly
             # example 14 // 10 = 1 (carry)
             # example 7  // 10 = 0
-            # [KEY] this effectively handles the carry-over elegantly
             _sum //= 10
 
             if cur1:
