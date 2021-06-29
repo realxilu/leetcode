@@ -27,8 +27,8 @@ class Solution:
 
 # [KEY][BFS][LEVEL-ORDER-TRAVERSAL] Essentially this is just a level order traversal problem.
 # The idea is to identify the last element (right view) of the level which by definition is the right side view
-# Observation and analysis is important to solving this type of questions. But usually under the stress of interviews, one can hardly come up
-# with an algorithm without any hint. Need to do more lc problems to bypass this problem.
+# Observation and analysis is important to solving this type of problems. But usually under the stress of interviews, one can hardly come up
+# with an algorithm without any hint. Need to do more lc problems to gain proficency.
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

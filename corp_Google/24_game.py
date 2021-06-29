@@ -2,22 +2,22 @@ import itertools
 
 class Solution(object):
     def judgePoint24(self, nums):
-        Ops = list(itertools.product([add, sub, mul, div], repeat = 3))
+        ops = list(itertools.product([add, sub, mul, div], repeat = 3))
         
         for num in set(itertools.permutations(nums)):
-            for op in Ops:
+            for op in ops:
                 # (Z op (Y op (W op X)))
-                result = op[0](num[0], num[1])
-                result = op[1](num[2], result)
-                result = op[2](num[3], result)
-                if 23.99 < result < 24.01:
+                res = op[0](num[0], num[1])
+                res = op[1](num[2], res)
+                res = op[2](num[3], res)
+                if 23.99 < res < 24.01:
                     return True
 
                 # ((W op X) op (Y op Z))
-                result1 = op[0](num[0], num[1])
-                result2 = op[1](num[2], num[3])
-                result = op[2](result1, result2)
-                if 23.99 < result < 24.01:
+                res1 = op[0](num[0], num[1])
+                res2 = op[1](num[2], num[3])
+                res = op[2](res1, res2)
+                if 23.99 < res < 24.01:
                     return True
         
         return False

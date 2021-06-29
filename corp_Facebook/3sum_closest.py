@@ -1,16 +1,18 @@
 class Solution:
-    def threeSumClosest(self, num, target):
-        num.sort()
+    def threeSumClosest(self, nums, target):
+        # NOTE important to sort the array
+        nums.sort()
         _min = float('inf')
 
-        for i in range(len(num) - 2):
-            j, k = i + 1, len(num) - 1
+        # be careful about edge indices
+        for i in range(len(nums) - 2):
+            j, k = i + 1, len(nums) - 1
             while j < k:
-                cur_sum = num[i] + num[j] + num[k]
+                cur_sum = nums[i] + nums[j] + nums[k]
                 if cur_sum == target:
                     return cur_sum
 
-                # compare the distance between current sum and known min value so far
+                # compare the dist btw current optimal and historial optimal so far
                 if abs(cur_sum - target) < abs(_min - target):
                     _min = cur_sum
 
@@ -20,3 +22,5 @@ class Solution:
                     k -= 1
 
         return _min
+
+# [KEY][TWO-POINTER]

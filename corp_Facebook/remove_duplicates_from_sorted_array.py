@@ -8,3 +8,5 @@ class Solution:
                 x += 1
 
         return x
+
+# TODO revisit without looking at the solution

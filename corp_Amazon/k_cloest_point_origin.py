@@ -4,7 +4,7 @@ class Solution:
         heap = []
 
         for (x, y) in points:
-            dist = - (x * x + y * y)
+            dist = -(x * x + y * y)
             if len(heap) == K:
                 heapq.heappushpop(heap, (dist, x, y))
             else:
@@ -13,8 +13,8 @@ class Solution:
         return [(x, y) for (dist, x, y) in heap]
 
 # [KEY]
-# why do we have a negative sign in the Euclidean distance?
-# Because we are faking the max heap here
+# why do we have a negative sign before the distance?
+# Because we are faking the max heap here.
 
 # why do we want to use max-heap here?
 # because we want to keep the smallest values possible

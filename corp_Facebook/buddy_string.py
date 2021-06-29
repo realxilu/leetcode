@@ -2,6 +2,7 @@ class Solution:
     def buddyStrings(self, A, B):
         if len(A) != len(B):
             return False
+        
         if A == B and len(set(A)) < len(A):
             return True
 

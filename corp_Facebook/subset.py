@@ -15,6 +15,7 @@ class Solution:
                 res[i].append(x)
 
         return res
+# the above method isn't backtracking
 
 # an example of the copy function
 # a = [1, 2, 3]
