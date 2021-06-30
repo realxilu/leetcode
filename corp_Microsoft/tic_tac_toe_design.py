@@ -1,26 +1,24 @@
-class TicTacToe:
+class TicTacToe(object):
+
     def __init__(self, n):
-        self.rows, self.cols = [0] * n, [0] * n
-        self.diag, self.antidiag = 0, 0
-        self.n = n
+        self.row, self.col, self.diag, self.anti_diag, self.n = [
+            0] * n, [0] * n, 0, 0, n
 
-    # the player places stone on grid (i, j)
-    def move(self, i, j, player):
-        n = self.n
+    def move(self, row, col, player):
+        offset = player * 2 - 3
+        self.row[row] += offset
+        self.col[col] += offset
 
-        add_one = 1 if player == 1 else -1
+        if row == col:
+            self.diag += offset
 
-        self.rows[i] += add_one
+        if row + col == self.n - 1:
+            self.anti_diag += offset
 
-        self.cols[j] += add_one
+        if self.n in [self.row[row], self.col[col], self.diag, self.anti_diag]:
+            return 2
 
-        if i == j:
-            self.diag += add_one
-
-        if i + j == n - 1:  # anti-diagnal
-            self.antidiag = add_one
-
-        if abs(self.rows[i]) == n or abs(self.cols[j]) == n or abs(self.diag) == n or abs(self.antidiag) == n:
-            return player
+        if -self.n in [self.row[row], self.col[col], self.diag, self.anti_diag]:
+            return 1
 
         return 0
