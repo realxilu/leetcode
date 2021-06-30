@@ -7,7 +7,7 @@ class Solution:
 
         # build graph
         # For example, the pair[5, 8], indicates that to take course 5 you have to first take course 8. 8=>5
-        # NOTE graph[x].append(y) is semantically incorrect but it won't matter in this case
+        # NOTE graph[x].append(y) is semantically incorrect but it will NOT matter in this case
         for x, y in prerequisites:
             graph[y].append(x)
 
@@ -19,7 +19,7 @@ class Solution:
 
         return True
 
-    # True -> no cycle detected
+    # True means no cycle has been detected
     def dfs(self, graph, visited, i):
         # if ith node is marked as being visited, then a cycle is found
         if visited[i] == 'VISITED':

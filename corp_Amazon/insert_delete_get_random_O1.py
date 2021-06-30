@@ -30,5 +30,5 @@ class RandomizedSet:
         rand = random.randint(0, len(self._list) - 1)
         return self._list[rand]
 
-# [KEY] composite data structure
+# [KEY] composite data structure, can't do it with array alone
 # Hashmap + array

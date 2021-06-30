@@ -7,7 +7,7 @@ class Solution:
 
         res, q, flag = [], deque([root]), True
         while q:
-            lvl, lvl_len = [], len(q) # <--- this is the most important part
+            lvl, lvl_len = [], len(q) # <--- it's important to record the length
             for _ in range(lvl_len):
                 node = q.popleft()
                 lvl.append(node.val)
@@ -25,7 +25,7 @@ class Solution:
 
         return res
 
-# [KEY] level order => BFS
+# [KEY][BFS][LEVEL-ORDER-TRAVERSAL]
 # Add an additional for-loop before pushing children into the queue 
 
 class TreeNode:

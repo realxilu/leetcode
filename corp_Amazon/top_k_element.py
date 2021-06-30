@@ -1,5 +1,5 @@
 import heapq
-# overall O(n*logk)
+# overall O(nlogk)
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         dic = {}
@@ -9,7 +9,7 @@ class Solution:
             dic[x] = dic.get(x, 0) + 1
 
         heap = [] # no need to heapify
-        # O(n*logk)
+        # O(nlogk)
         for key, val in dic.items():
             heapq.heappush(heap, (key, val))
 

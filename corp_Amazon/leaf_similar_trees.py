@@ -13,14 +13,13 @@ class Solution:
         return True
 
     def _get_leaf_inorder(self, root):
-        cur, stack = root, []
-        res = []
-
+        cur, stack, res = root, [], []
         while cur or stack:
             while cur:
                 stack.append(cur)
                 cur = cur.left
             node = stack.pop()
+            
             if not node.left and not node.right:
                 res.append(node.val)
 

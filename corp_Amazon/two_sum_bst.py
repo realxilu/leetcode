@@ -3,7 +3,7 @@ class Solution:
         if not root1 or not root2:
             return False
 
-        # internal function ---------------------
+        # inner function ---------------------
         def inOrder(root, s, target):
             if not root:
                 return
