@@ -20,4 +20,4 @@ class Solution(object):
         
         return cur_string
 
-# [KEY][STACK] stack and reset after use
+# [KEY][STACK]
