@@ -10,6 +10,5 @@ class Solution:
 
         return res
 
-# [KEY] string multiplication
-# 0 * 'a' = ''
+# NOTE: 0 * 'a' = ''
 # 3 * 'a' = 'aaa'
