@@ -8,6 +8,7 @@ class Solution:
 
         return abs(left - right) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
 
+    # [KEY] helper function
     def depth(self, root):
         if not root:
             return 0
