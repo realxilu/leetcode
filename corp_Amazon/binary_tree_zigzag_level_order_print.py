@@ -7,10 +7,10 @@ class Solution:
 
         res, q, flag = [], deque([root]), True
         while q:
-            lvl, lvl_len = [], len(q) # <--- it's important to record the length
-            for _ in range(lvl_len):
+            level, level_length = [], len(q) # <--- it's important to record the length
+            for _ in range(level_length):
                 node = q.popleft()
-                lvl.append(node.val)
+                level.append(node.val)
 
                 if node.left:
                     q.append(node.left)
@@ -18,9 +18,9 @@ class Solution:
                     q.append(node.right)
 
             if flag:
-                res.append(lvl)
+                res.append(level)
             else:
-                res.append(lvl[::-1])
+                res.append(level[::-1])
             flag = not flag
 
         return res
