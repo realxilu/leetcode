@@ -10,18 +10,22 @@ class Solution:
 
         return res
 
-# [IMPORTANT] 0 * 'a' = ''
-# 3 * 'a' = 'aaa'
+# [KEY] modulous operation
 
+# [IMPORTANT] 
+# 0 * 'CM' = ''
+# 3 * 'IV' = 'IVIVIV'
+
+# [EXAMPLE] num = 743 as an
 # 743 // 1000, 743 // 900, 743 // 500 = 1, ....
-# D
+# res = D
 # 743 % 500 = 243
 # 243 // 1000, ... 243 // 100 = 2, ...
-# DCC
+# res = DCC
 # ... 243 % 100 = 43 ...
 # 43 // 1000, ... 43 // 40 = 1, ...
-# DCCXL
+# res = DCCXL
 # 43 % 40 = 3
 # ... 3 // 1 = 3
-# DCCXLIII
-
+# res = DCCXLIII
+# return DCCXLIII
