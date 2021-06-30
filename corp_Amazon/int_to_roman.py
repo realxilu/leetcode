@@ -6,7 +6,7 @@ class Solution:
         res = ''
         for digit, roman in zip(digits, romans):
             res += (num // digit) * roman
-            num %= digit
+            num = num % digit
 
         return res
 
@@ -16,7 +16,7 @@ class Solution:
 # 0 * 'CM' = ''
 # 3 * 'IV' = 'IVIVIV'
 
-# [EXAMPLE] num = 743 as an
+# [EXAMPLE] num = 743
 # 743 // 1000, 743 // 900, 743 // 500 = 1, ....
 # res = D
 # 743 % 500 = 243
