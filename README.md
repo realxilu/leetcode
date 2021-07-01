@@ -1,4 +1,4 @@
-# AIM TO PERFECT THE SKILL, BE ALL YOU CAN BE.
+# AIM TO PERFECT THE SKILL AND BE ALL YOU CAN BE.
 
 Nomenclatures and conventions in this repo:
 - i, j, k: for indexing. 'i' is usually the index from left, 'j' the index from right. 'k' comes after 'j' if present
