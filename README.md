@@ -1,4 +1,4 @@
-# LET'S FUCKING GET SOME! OORAH!
+# AIM TO PERFECT THE SKILL, BE ALL YOU CAN BE.
 
 Common nomenclatures and conventions used in this repo:
 - i, j: for indexing. 'i' is usually the index from left, 'j' the index from right
