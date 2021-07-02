@@ -1,12 +1,19 @@
 class Solution:
-    def is_same_tree(self, p, q):
-        if p is None and q is None:
+    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+        if not p and not q:
             return True
 
-        if p is None or q is None:
+        if not p:
+            return False
+        if not q:
             return False
 
-        return p.val == q.val and self.is_same_tree(p.left, q.left) and self.is_same_tree(p.right, q.right)
+        return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 # 1-IF
 # if both are NULL, both have reached the leaf nodes
