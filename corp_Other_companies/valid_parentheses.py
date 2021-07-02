@@ -14,7 +14,6 @@ class Solution:
 
         return len(stack) == 0
 
-
 # Note we don't need hashmap here, just push the closing paren into the stack
 # TEST CASES:
 # 1. ))))
