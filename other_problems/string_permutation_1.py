@@ -13,5 +13,6 @@ def _permute(arr, l, r, res):
 
     return res
 
+# backtrack solution
 print('Print permutation:')
 print(permute('123'))
