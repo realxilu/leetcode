@@ -11,12 +11,14 @@ class Solution:
         if not root:
             return 0
 
+        # if there is negative in the previous sub-tree, we can ignore it. Thus it would be 0.
         left = max(0, self.max_path_down(root.left))
         right = max(0, self.max_path_down(root.right))
 
         # update the global max
         self.global_max = max(self.global_max, left + right + root.val)
 
+        # can only take one path by definition
         return max(left, right) + root.val
 
 class TreeNode:
